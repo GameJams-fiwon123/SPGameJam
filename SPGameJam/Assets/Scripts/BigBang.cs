@@ -6,17 +6,13 @@ public class BigBang : MonoBehaviour
 {
 	public Animator anim;
 
-	// Start is called before the first frame update
-	void Start() {
-
-	}
-
-	// Update is called once per frame
-	void Update() {
-
-	}
-
 	private void OnMouseDown() {
 		anim.Play("Explosion");
+	}
+
+	public void FinishAnimation() {
+		FindObjectOfType<BackgroundManager>().Next();
+		FindObjectOfType<GameManager>().StartGame();
+		Destroy(gameObject);
 	}
 }
