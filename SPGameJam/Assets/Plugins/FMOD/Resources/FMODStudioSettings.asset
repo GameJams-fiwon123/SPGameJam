@@ -15,7 +15,7 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: FMOD\Bum.fspro
+  sourceProjectPath: FMOD/Bum.fspro
   sourceBankPath: FMOD\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
@@ -29,6 +29,8 @@ MonoBehaviour:
   - Platform: 2
     Value: 3
   - Platform: 20
+    Value: 3
+  - Platform: 1
     Value: 3
   SampleRateSettings:
   - Platform: 1
@@ -60,6 +62,8 @@ MonoBehaviour:
     Value: 0
   BankDirectorySettings:
   - Platform: 2
+    Value: Desktop
+  - Platform: 1
     Value: Desktop
   VirtualChannelSettings:
   - Platform: 1

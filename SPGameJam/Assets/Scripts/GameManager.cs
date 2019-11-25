@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
 
 	public void StartGame() {
 		StartCoroutine(StartSpawn());
-		sunAnim.Play("Show");
 	}
 
 	IEnumerator StartSpawn() {
