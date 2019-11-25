@@ -150,8 +150,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f3ebcaad3f59a40abcbd913e29b376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectsPrefabs: []
+  elementsPrefabs:
+  - {fileID: 5446067653348276108, guid: 37cfb16f4c95fc446a3923382815846c, type: 3}
+  - {fileID: 4153222468819808378, guid: ed3ee88d83e0e804e815685460a9953e, type: 3}
+  - {fileID: 4042824667503732195, guid: 3c4370c9d9360d745893b451089be4fe, type: 3}
+  - {fileID: 4998789919549218897, guid: 58bfc65e4df5f904f9a4f6dda5df97df, type: 3}
+  - {fileID: 6688988556098390226, guid: e70c7c7d4c6cb3646ae3fda28dafa936, type: 3}
+  - {fileID: 6177459284463558199, guid: b52394f4747621d4cb46927d22734f5f, type: 3}
   sunAnim: {fileID: 0}
+  starExplosion: {fileID: 3210153212568079646, guid: bc7736dc57e5a9e438875e69a3a30436,
+    type: 3}
+  cometaExplosion: {fileID: 6414868552014977921, guid: b37316f43bda20a40b4e8fd5a0235329,
+    type: 3}
 --- !u!4 &334796182
 Transform:
   m_ObjectHideFlags: 0
