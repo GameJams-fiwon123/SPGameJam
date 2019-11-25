@@ -10,6 +10,10 @@ public class BigBang : MonoBehaviour
 		anim.Play("Explosion");
 	}
 
+	public void ExplosionEffect() {
+		FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Explosão Estrelar");
+	}
+
 	public void NextAnimation() {
 		FindObjectOfType<BackgroundManager>().Next();
 	}

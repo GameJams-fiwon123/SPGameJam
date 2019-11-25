@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{60dcad9a-ea2f-4406-8149-86e1ef615cdb}">
+        <property name="assetPath">
+            <value>SFX/zoom in.ogg</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>3.5631519274376418</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{904fc98a-3cb4-4f68-9901-0eaea1c89ecc}</destination>
+        </relationship>
+    </object>
+</objects>

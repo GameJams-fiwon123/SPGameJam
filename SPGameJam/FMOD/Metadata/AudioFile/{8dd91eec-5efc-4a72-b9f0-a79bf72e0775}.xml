@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{8dd91eec-5efc-4a72-b9f0-a79bf72e0775}">
+        <property name="assetPath">
+            <value>Músicas/Universo/universo - cama2.ogg</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>72</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{904fc98a-3cb4-4f68-9901-0eaea1c89ecc}</destination>
+        </relationship>
+    </object>
+</objects>
