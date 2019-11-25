@@ -10,8 +10,11 @@ public class BigBang : MonoBehaviour
 		anim.Play("Explosion");
 	}
 
-	public void FinishAnimation() {
+	public void NextAnimation() {
 		FindObjectOfType<BackgroundManager>().Next();
+	}
+
+	public void FinishAnimation() {
 		FindObjectOfType<GameManager>().StartGame();
 		Destroy(gameObject);
 	}
