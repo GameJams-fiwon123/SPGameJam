@@ -7,7 +7,7 @@ public class MatcherObject : MonoBehaviour
 	[Range(0, 4)]
 	public int level = 0;
 
-	public enum type { ELEMENT };
+	public enum type { ELEMENT, STARDUST };
 	public type id;
 
 	public GameObject combineExplosion;
@@ -29,6 +29,15 @@ public class MatcherObject : MonoBehaviour
 			if (other.id == id && other.level == level && isHolding) {
 				FindObjectOfType<GameManager>().SpawnObject(id, level+1, transform.position);
 				Instantiate(combineExplosion, transform.position, Quaternion.identity);
+				switch (id) {
+					case type.ELEMENT:
+						FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Combinação Elementos");
+						break;
+					case type.STARDUST:
+						FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Combinação Poeiras");
+						break;
+				}
+
 				Destroy(collision.gameObject);
 				Destroy(gameObject);
 			}
