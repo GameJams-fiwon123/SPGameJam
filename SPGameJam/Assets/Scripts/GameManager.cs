@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
 
 	public GameObject panel;
 
+	public GameObject sunExplosion;
+
 	public void StartGame() {
 		StartCoroutine(StartSpawnElement());
 	}
@@ -101,7 +103,7 @@ public class GameManager : MonoBehaviour
 				if (level < 5) {
 					obj = Instantiate(elementsPrefabs[level], newPosition, Quaternion.identity);
 				} else if (!flagSun) {
-					obj = Instantiate(elementsPrefabs[level], Vector3.zero, Quaternion.identity);
+					obj = Instantiate(sunExplosion, newPosition, Quaternion.identity);
 					StartCoroutine(StartSpawnStardust());
 					flagSun = true;
 					return;

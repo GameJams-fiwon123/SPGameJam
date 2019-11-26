@@ -50,17 +50,19 @@ MonoBehaviour:
   - {fileID: 4042824667503732195, guid: 3c4370c9d9360d745893b451089be4fe, type: 3}
   - {fileID: 4998789919549218897, guid: 58bfc65e4df5f904f9a4f6dda5df97df, type: 3}
   - {fileID: 6688988556098390226, guid: e70c7c7d4c6cb3646ae3fda28dafa936, type: 3}
-  - {fileID: 6177459284463558199, guid: b52394f4747621d4cb46927d22734f5f, type: 3}
   stardustPrefabs:
   - {fileID: 7333335533051230681, guid: 0c1360b3276d4534c8163742d2a49f84, type: 3}
   - {fileID: 3947187475866880239, guid: d6d9660c9bdc53b44bb3f9757c469855, type: 3}
   - {fileID: 1603908003442114591, guid: a424d496d848e054aa89b023206eaf6b, type: 3}
   - {fileID: 2670152725619239725, guid: 23da2ca7ceff5ab4ea18f66bd77dc385, type: 3}
   - {fileID: 579024584307757802, guid: a9935e1657be0cc4296094dde13f01e0, type: 3}
-  sunAnim: {fileID: 0}
   starExplosion: {fileID: 3210153212568079646, guid: bc7736dc57e5a9e438875e69a3a30436,
     type: 3}
   cometaExplosion: {fileID: 6414868552014977921, guid: b37316f43bda20a40b4e8fd5a0235329,
+    type: 3}
+  spawner: {fileID: 0}
+  panel: {fileID: 0}
+  sunExplosion: {fileID: 326305600809323591, guid: f7567a78459e8ed4fad5a63b7e04ee7b,
     type: 3}
 --- !u!114 &3805391756763720437
 MonoBehaviour:
