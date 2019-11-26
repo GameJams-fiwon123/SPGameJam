@@ -20,28 +20,72 @@ public class GameManager : MonoBehaviour
 	public GameObject panel;
 
 	public void StartGame() {
-		StartCoroutine(StartSpawn());
+		StartCoroutine(StartSpawnElement());
 	}
 
-	IEnumerator StartSpawn() {
+	private void Update() {
+		countObjects = spawner.transform.GetChildCount();
+	}
+
+	private Vector3 GetPositionSpawn() {
+		float y = Random.Range(0f, Screen.height);
+		float x = 0;
+
+		int value = Random.Range(0, 2);
+
+		switch (value) {
+			case 0:
+				x = 0f;
+				break;
+			case 1:
+				x = Screen.width;
+				break;
+		}
+
+		Vector3 newPosition = Camera.main.ScreenToWorldPoint(new Vector3(x, y));
+		newPosition.z = 0f;
+
+		return newPosition;
+	}
+
+	IEnumerator StartSpawnElement() {
 		while (true) {
 
 			if (countObjects < 10) {
-				float x = Random.Range(0f, Screen.width);
-				float y = Random.Range(0f, Screen.height);
 
-				Vector3 newPosition = Camera.main.ScreenToWorldPoint(new Vector3(x, y));
-				newPosition.z = 0f;
+				Vector3 newPosition = GetPositionSpawn();
 
-				if (!flagSun) {
-					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Elemento Entra");
-					Instantiate(elementsPrefabs[0], newPosition, Quaternion.identity, spawner);
+
+
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Elemento Entra");
+				GameObject obj = Instantiate(elementsPrefabs[0], newPosition, Quaternion.identity, spawner);
+
+
+					if (newPosition.x < 0f) {
+						obj.GetComponent<MatcherObject>().dir = Vector3.right;
+					} else {
+						obj.GetComponent<MatcherObject>().dir = Vector3.left;
+					}
+			}
+
+			yield return new WaitForSeconds(2);
+		}
+	}
+
+	IEnumerator StartSpawnStardust() {
+		while (true) {
+			if (countObjects < 10) {
+
+				Vector3 newPosition = GetPositionSpawn();
+
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Poeira Entra");
+				GameObject obj = Instantiate(stardustPrefabs[0], newPosition, Quaternion.identity, spawner);
+
+				if (newPosition.x < 0f) {
+					obj.GetComponent<MatcherObject>().dir = Vector3.right;
 				} else {
-					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Poeira Entra");
-					Instantiate(stardustPrefabs[0], newPosition, Quaternion.identity, spawner);
+					obj.GetComponent<MatcherObject>().dir = Vector3.left;
 				}
-
-				countObjects++;
 			}
 
 			yield return new WaitForSeconds(2);
@@ -49,39 +93,38 @@ public class GameManager : MonoBehaviour
 	}
 
 	public void SpawnObject(MatcherObject.type type, int level, Vector3 newPosition) {
-		countObjects--;
+
+		GameObject obj = null;
+
 		switch (type) {
 			case MatcherObject.type.ELEMENT:
 				if (level < 5) {
-					Instantiate(elementsPrefabs[level], newPosition, Quaternion.identity);
+					obj = Instantiate(elementsPrefabs[level], newPosition, Quaternion.identity);
 				} else if (!flagSun) {
-					Instantiate(elementsPrefabs[level], Vector3.zero, Quaternion.identity);
-					countObjects--;
-					foreach (Transform child in spawner) {
-						Destroy(child.gameObject);
-					}
+					obj = Instantiate(elementsPrefabs[level], Vector3.zero, Quaternion.identity);
+					StartCoroutine(StartSpawnStardust());
 					flagSun = true;
+					return;
 				} else {
-					Instantiate(starExplosion, newPosition, Quaternion.identity);
+					obj = Instantiate(starExplosion, newPosition, Quaternion.identity);
 					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Cometa");
-					countObjects--;
 				}
 				break;
 			case MatcherObject.type.STARDUST:
 				if (level < 5) {
-					Instantiate(stardustPrefabs[level], newPosition, Quaternion.identity);
+					obj = Instantiate(stardustPrefabs[level], newPosition, Quaternion.identity);
 				} else if (countPlanets < 3) {
 					panel.SetActive(true);
 					panel.transform.GetChild(countPlanets).gameObject.SetActive(true);
-					countPlanets++;
 					FindObjectOfType<BackgroundManager>().Next();
-					countObjects--;
 				} else {
-					Instantiate(cometaExplosion, newPosition, Quaternion.identity);
+					obj = Instantiate(cometaExplosion, newPosition, Quaternion.identity);
 					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Explosão Planetária");
-					countObjects--;
 				}
 				break;
 		}
+
+		if (obj)
+			obj.GetComponent<MatcherObject>().ChangeDirection();
 	}
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{0c35941e-91d4-4e45-8fba-709b03e2c39d}">
+        <property name="name">
+            <value>Montanha</value>
+        </property>
+        <relationship name="folder">
+            <destination>{a4a54c38-8506-44e7-8f9a-fa48c59a3a7d}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{cab91d5b-f96b-4977-9bfe-67eddf798b4a}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{cab91d5b-f96b-4977-9bfe-67eddf798b4a}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+        <property name="seekSpeed">
+            <value>0.40000000596046448</value>
+        </property>
+    </object>
+</objects>

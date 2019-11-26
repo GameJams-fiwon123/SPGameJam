@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{b34e9e9b-e7f0-498e-9b9c-620b6e061627}">
         <property name="assetPath">
-            <value>impacto laser.ogg</value>
+            <value>SFX/impacto laser.ogg</value>
         </property>
         <property name="frequencyInKHz">
             <value>44.0999985</value>

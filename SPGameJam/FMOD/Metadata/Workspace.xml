@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.00.00">
-	<object class="Workspace" id="{a4001d93-ce32-40fd-92e2-d62fc41c0014}">
-		<relationship name="masterEventFolder">
-			<destination>{a68825bc-fe57-4a55-bd5b-be6ab78066d1}</destination>
-		</relationship>
-		<relationship name="masterTagFolder">
-			<destination>{c9e8b79f-e75e-41d8-9f61-890604399d56}</destination>
-		</relationship>
-		<relationship name="masterEffectPresetFolder">
-			<destination>{496e61f1-c63b-4a0b-8522-3874a8f874b4}</destination>
-		</relationship>
-		<relationship name="masterParameterPresetFolder">
-			<destination>{a4a54c38-8506-44e7-8f9a-fa48c59a3a7d}</destination>
-		</relationship>
-		<relationship name="masterBankFolder">
-			<destination>{74374478-37cf-49bc-b5cf-d83133e71f4b}</destination>
-		</relationship>
-		<relationship name="masterAssetFolder">
-			<destination>{904fc98a-3cb4-4f68-9901-0eaea1c89ecc}</destination>
-		</relationship>
-		<relationship name="mixer">
-			<destination>{50b73d57-0841-4120-b28a-f3098b4c21cf}</destination>
-		</relationship>
-		<relationship name="platforms">
-			<destination>{2b629fb5-1d49-490c-a3cb-94c594272644}</destination>
-		</relationship>
-	</object>
+<objects serializationModel="Studio.01.10.00">
+    <object class="Workspace" id="{a4001d93-ce32-40fd-92e2-d62fc41c0014}">
+        <relationship name="masterEventFolder">
+            <destination>{a68825bc-fe57-4a55-bd5b-be6ab78066d1}</destination>
+        </relationship>
+        <relationship name="masterTagFolder">
+            <destination>{c9e8b79f-e75e-41d8-9f61-890604399d56}</destination>
+        </relationship>
+        <relationship name="masterEffectPresetFolder">
+            <destination>{496e61f1-c63b-4a0b-8522-3874a8f874b4}</destination>
+        </relationship>
+        <relationship name="masterParameterPresetFolder">
+            <destination>{a4a54c38-8506-44e7-8f9a-fa48c59a3a7d}</destination>
+        </relationship>
+        <relationship name="masterBankFolder">
+            <destination>{74374478-37cf-49bc-b5cf-d83133e71f4b}</destination>
+        </relationship>
+        <relationship name="masterAssetFolder">
+            <destination>{904fc98a-3cb4-4f68-9901-0eaea1c89ecc}</destination>
+        </relationship>
+        <relationship name="mixer">
+            <destination>{50b73d57-0841-4120-b28a-f3098b4c21cf}</destination>
+        </relationship>
+        <relationship name="platforms">
+            <destination>{2b629fb5-1d49-490c-a3cb-94c594272644}</destination>
+        </relationship>
+    </object>
 </objects>

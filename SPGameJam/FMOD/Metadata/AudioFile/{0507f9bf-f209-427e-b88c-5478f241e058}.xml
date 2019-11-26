@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{0507f9bf-f209-427e-b88c-5478f241e058}">
         <property name="assetPath">
-            <value>Pedra.ogg</value>
+            <value>SFX/Pedra.ogg</value>
         </property>
         <property name="frequencyInKHz">
             <value>44.0999985</value>

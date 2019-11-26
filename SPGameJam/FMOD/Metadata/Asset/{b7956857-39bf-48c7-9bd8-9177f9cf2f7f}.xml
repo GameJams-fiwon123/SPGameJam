@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="EncodableAsset" id="{b7956857-39bf-48c7-9bd8-9177f9cf2f7f}">
+        <property name="assetPath">
+            <value>Músicas/Planeta Habitável/</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{904fc98a-3cb4-4f68-9901-0eaea1c89ecc}</destination>
+        </relationship>
+    </object>
+</objects>

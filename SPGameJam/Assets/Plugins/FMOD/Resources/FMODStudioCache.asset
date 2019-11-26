@@ -1,5 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9193892772910928894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SFX/Combina\xE7\xE3o Elementos"
+  m_EditorClassIdentifier: 
+  Path: "event:/SFX/Combina\xE7\xE3o Elementos"
+  guid: d454506071a24740820c7ee351524519
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &-9022704911580654145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23,6 +46,142 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1000
+--- !u!114 &-8991087535727727005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Roedor - Montanha
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Roedor - Montanha
+  guid: a5a439c9d9c4214eaf1ff975fc3cf232
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2043
+--- !u!114 &-8659681669708267986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SFX/P\xE1ssaro - C\xE9u"
+  m_EditorClassIdentifier: 
+  Path: "event:/SFX/P\xE1ssaro - C\xE9u"
+  guid: 14ed977325305c41a4139647155c7f67
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1500
+--- !u!114 &-8249986721156032856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SFX/\xC1gua - Peixe"
+  m_EditorClassIdentifier: 
+  Path: "event:/SFX/\xC1gua - Peixe"
+  guid: d99437d55fdfeb41a26a6ebba5ac0fc8
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1439
+--- !u!114 &-7961554227387126314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsicas/Planeta habit\xE1vel"
+  m_EditorClassIdentifier: 
+  Path: "event:/M\xFAsicas/Planeta habit\xE1vel"
+  guid: f685ac06a9b09d4b87f81ba1cc891284
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 528968413977900482}
+  - {fileID: 3262309634883728140}
+  - {fileID: -7149443055403119522}
+  - {fileID: 1467595727320851187}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 23992
+--- !u!114 &-7762611027993584143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SFX/Explos\xE3o Planet\xE1ria"
+  m_EditorClassIdentifier: 
+  Path: "event:/SFX/Explos\xE3o Planet\xE1ria"
+  guid: e4526e2e3fd845499a32e3754467e56d
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3864
+--- !u!114 &-7149443055403119522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Planeta habit\xE1vel/C\xE9u"
+  m_EditorClassIdentifier: 
+  Name: "C\xE9u"
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-6203317112149852559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,6 +205,66 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3864
+--- !u!114 &-5352501372382202766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Elemento Entra
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Elemento Entra
+  guid: 5b1cd8aa7531db48b3c8d0bb9938c0c7
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
+--- !u!114 &-4739982703922662243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Build/Desktop/Master Bank.strings.bank
+  SubDir: 
+  lastModified: 637103752434200523
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1712
+  Exists: 1
+--- !u!114 &-4611639552472749239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Universo/N\xEDveis"
+  m_EditorClassIdentifier: 
+  Name: "N\xEDveis"
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
 --- !u!114 &-4418358926056560986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +311,47 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3000
+--- !u!114 &-2275674635936165224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Meleca (Mistura)
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Meleca (Mistura)
+  guid: bc3a6dfe364085479c846b0c921818b4
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
+--- !u!114 &-1899485210187730212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Build/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 637103752433670515
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-1809447217664306637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +399,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1000
+--- !u!114 &-1305832035699526367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsicas/Planeta Quente"
+  m_EditorClassIdentifier: 
+  Path: "event:/M\xFAsicas/Planeta Quente"
+  guid: 42ea24923f1682408c5693fbc9ad10b8
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 16000
 --- !u!114 &-874662162880521238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,26 +452,118 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 7648719467951235461}
-  - {fileID: 1944659983225607323}
+  - {fileID: -4739982703922662243}
+  - {fileID: -1899485210187730212}
   EditorEvents:
-  - {fileID: -2851133077240557770}
-  - {fileID: -4418358926056560986}
-  - {fileID: -1779960745141774733}
-  - {fileID: 5000810855505223972}
-  - {fileID: 3665072959728947730}
-  - {fileID: -9022704911580654145}
-  - {fileID: 5297711719231721151}
-  - {fileID: 3522026487018761641}
-  - {fileID: -1809447217664306637}
-  - {fileID: -6203317112149852559}
+  - {fileID: 2544727374363214140}
+  - {fileID: 2399866024652713180}
+  - {fileID: -8659681669708267986}
+  - {fileID: 8793784962811552231}
+  - {fileID: -1305832035699526367}
+  - {fileID: -5352501372382202766}
+  - {fileID: 1952668294760430338}
+  - {fileID: 2318498151277294434}
+  - {fileID: 4424219577931173865}
+  - {fileID: 2543492023068715826}
+  - {fileID: -8991087535727727005}
+  - {fileID: -2275674635936165224}
+  - {fileID: 5266909600935169824}
+  - {fileID: 689101106642338235}
+  - {fileID: 7643141818336234779}
+  - {fileID: -9193892772910928894}
+  - {fileID: -8249986721156032856}
+  - {fileID: 38582698125746048}
+  - {fileID: -7762611027993584143}
+  - {fileID: 5182517241656598885}
+  - {fileID: -7961554227387126314}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 1944659983225607323}
+  - {fileID: -1899485210187730212}
   StringsBanks:
-  - {fileID: 7648719467951235461}
-  stringsBankWriteTime: 637102990736537293
+  - {fileID: -4739982703922662243}
+  stringsBankWriteTime: 637103752434200523
   cacheVersion: 3
+--- !u!114 &38582698125746048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsicas/Universo"
+  m_EditorClassIdentifier: 
+  Path: "event:/M\xFAsicas/Universo"
+  guid: e40982e0a4953c43ada347556c0fb837
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -4611639552472749239}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 64000
+--- !u!114 &528968413977900482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Planeta habit\xE1vel/Terra"
+  m_EditorClassIdentifier: 
+  Name: Terra
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &689101106642338235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Poeira Entra
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Poeira Entra
+  guid: cdd8aef6d38e364e9586f5b59423687f
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
+--- !u!114 &1467595727320851187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Planeta habit\xE1vel/Mar"
+  m_EditorClassIdentifier: 
+  Name: Mar
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &1944659983225607323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +581,138 @@ MonoBehaviour:
   lastModified: 637102990736497400
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &1952668294760430338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsicas/Planeta Frio"
+  m_EditorClassIdentifier: 
+  Path: "event:/M\xFAsicas/Planeta Frio"
+  guid: 6102d5cb5e0f9d4fa3c26a96522c8a8c
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 16000
+--- !u!114 &2318498151277294434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Mato - Terra
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Mato - Terra
+  guid: 69399f9bd4801c468a5b449d3359673e
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 900
+--- !u!114 &2399866024652713180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Cometa
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Cometa
+  guid: 10af2315567a984db93365c4e5983331
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1500
+--- !u!114 &2543492023068715826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SFX/Explos\xE3o Estrelar"
+  m_EditorClassIdentifier: 
+  Path: "event:/SFX/Explos\xE3o Estrelar"
+  guid: 9f4eab99513957498a439dc718ae59cb
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2500
+--- !u!114 &2544727374363214140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Zoom In
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Zoom In
+  guid: 0e268b2a09077a4fa70854b85cbfa703
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3000
+--- !u!114 &3262309634883728140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Planeta habit\xE1vel/Montanha"
+  m_EditorClassIdentifier: 
+  Name: Montanha
+  Min: 0
+  Max: 1
+  Default: 0
   Exists: 1
 --- !u!114 &3522026487018761641
 MonoBehaviour:
@@ -253,6 +760,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3000
+--- !u!114 &4424219577931173865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Raio
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Raio
+  guid: 8da0b7733710034287ef73249c677032
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2500
 --- !u!114 &5000810855505223972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +806,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2500
+--- !u!114 &5182517241656598885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Queda
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Queda
+  guid: e94576419decaa4ebdbce46c32b5203d
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 950
+--- !u!114 &5266909600935169824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Zoom Out
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Zoom Out
+  guid: bf6e5e52df9eeb43ab2937241f3b2879
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3000
 --- !u!114 &5297711719231721151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +868,29 @@ MonoBehaviour:
   guid: d333873c3d8cab4bb00c141c19a0bc56
   Banks:
   - {fileID: 1944659983225607323}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
+--- !u!114 &7643141818336234779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SFX/Combina\xE7\xE3o Poeiras"
+  m_EditorClassIdentifier: 
+  Path: "event:/SFX/Combina\xE7\xE3o Poeiras"
+  guid: d333873c3d8cab4bb00c141c19a0bc56
+  Banks:
+  - {fileID: -1899485210187730212}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -319,3 +918,26 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1252
   Exists: 1
+--- !u!114 &8793784962811552231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SFX/R\xE9ptil - Terra"
+  m_EditorClassIdentifier: 
+  Path: "event:/SFX/R\xE9ptil - Terra"
+  guid: 420f54861653ee4b8bb34a17f26060a4
+  Banks:
+  - {fileID: -1899485210187730212}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 682

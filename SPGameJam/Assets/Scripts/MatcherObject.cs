@@ -14,11 +14,48 @@ public class MatcherObject : MonoBehaviour
 
 	bool isHolding = false;
 
+	public Vector3 dir = Vector3.zero;
+	private float speed = 1f;
+
+	private float currentTime = 0f;
+	private float waitTime = 0.1f;
+
 	private void Update() {
+		if (dir != Vector3.zero) {
+			Move();
+			HoldObject();
+		}
+
+		currentTime += Time.deltaTime;
+		if (currentTime >= waitTime) {
+			currentTime = waitTime;
+		}
+	}
+
+	private void Move() {
+		transform.position += dir * speed * Time.deltaTime;
+	}
+
+	private void HoldObject() {
 		if (Input.GetMouseButton(0) && isHolding) {
-			Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			float x = Mathf.Clamp(Input.mousePosition.x, 10f, Screen.width-10f);
+			float y = Mathf.Clamp(Input.mousePosition.y, 10f, Screen.height-10f);
+			Vector3 newPosition = Camera.main.ScreenToWorldPoint(new Vector3(x, y));
 			newPosition.z = 0;
 			transform.position = newPosition;
+		}
+	}
+
+	private void OnTriggerStay2D(Collider2D collision) {
+		if (collision.tag == "Wall") {
+			if (level > 0 && currentTime >= waitTime) {
+				float x = Random.Range(dir.x - 0.1f, dir.x + 0.1f);
+				float y = Random.Range(dir.y - 0.1f, dir.y - 0.1f);
+				dir = new Vector3(x, y);
+				dir = -dir;
+				dir = dir.normalized;
+				currentTime = 0f;
+			}
 		}
 	}
 
@@ -45,11 +82,25 @@ public class MatcherObject : MonoBehaviour
 
 	}
 
+	public void ChangeDirection() {
+		float x = Random.Range(-1f, 1f);
+		float y = Random.Range(-1f, 1f);
+
+		dir.Set(x, y, 0f);
+		dir = dir.normalized;
+	}
+
 	private void OnMouseDown() {
 		isHolding = true;
 	}
 
 	private void OnMouseUp() {
+		ChangeDirection();
+
 		isHolding = false;
+	}
+
+	private void OnBecameInvisible() {
+		Destroy(gameObject);
 	}
 }
