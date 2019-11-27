@@ -26,11 +26,11 @@ public class GameManager : MonoBehaviour
 	}
 
 	private void Update() {
-		countObjects = spawner.transform.GetChildCount();
+		countObjects = spawner.transform.childCount;
 	}
 
 	private Vector3 GetPositionSpawn() {
-		float y = Random.Range(0f, Screen.height);
+		float y = Random.Range(10f, Screen.height-10);
 		float x = 0;
 
 		int value = Random.Range(0, 2);

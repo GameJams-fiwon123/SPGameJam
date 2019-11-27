@@ -20,7 +20,6 @@ public class SunExplosion : MonoBehaviour
 			transform.position += dir * 2 * Time.deltaTime;
 			yield return new WaitForSeconds(0.01f);
 			dist = Vector3.Distance(transform.position, Vector3.zero);
-			Debug.Log(dist);
 
 		}
 		anim.Play("Explosion");
@@ -30,5 +29,7 @@ public class SunExplosion : MonoBehaviour
 
 	public void FinishAnimation() {
 		Destroy(gameObject);
+
+		gameObject.layer = 2; // 
 	}
 }
