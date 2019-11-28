@@ -8,6 +8,7 @@ public class SunExplosion : MonoBehaviour
 	public GameObject sunPrefab;
 	public Animator anim;
 
+
 	// Start is called before the first frame update
 	void Start() {
 		StartCoroutine(Move());
@@ -23,13 +24,16 @@ public class SunExplosion : MonoBehaviour
 
 		}
 		anim.Play("Explosion");
-	 Instantiate(sunPrefab, Vector3.zero, Quaternion.identity);
 
 	}
 
-	public void FinishAnimation() {
-		Destroy(gameObject);
+	public void ShowSun() {
+		Instantiate(sunPrefab, Vector3.zero, Quaternion.identity, gameObject.transform.parent);
+	}
 
-		gameObject.layer = 2; // 
+	public void FinishAnimation() {
+
+		gameObject.layer = 2;
+		Destroy(gameObject);
 	}
 }

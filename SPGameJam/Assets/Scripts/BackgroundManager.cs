@@ -17,8 +17,10 @@ public class BackgroundManager : MonoBehaviour
 	}
 
 	public void Next() {
-		sprRenderer2.sprite = sprites[indexSprite];
-		anim.Play("BackgroundManager");
+		if (indexSprite < sprites.Length) {
+			sprRenderer2.sprite = sprites[indexSprite];
+			anim.Play("BackgroundManager");
+		}
 	}
 
 	public void NextAnimation() {

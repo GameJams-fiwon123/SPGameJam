@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6177459284463558201}
   - component: {fileID: 6177459284463558200}
   - component: {fileID: 181283432}
+  - component: {fileID: 8849290124958684247}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -100,3 +101,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8849290124958684247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6177459284463558199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3102e5f02e23e5c458d2ad403b1da5f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 181283432}

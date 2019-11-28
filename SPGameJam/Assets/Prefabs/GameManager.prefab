@@ -56,6 +56,7 @@ MonoBehaviour:
   - {fileID: 1603908003442114591, guid: a424d496d848e054aa89b023206eaf6b, type: 3}
   - {fileID: 2670152725619239725, guid: 23da2ca7ceff5ab4ea18f66bd77dc385, type: 3}
   - {fileID: 579024584307757802, guid: a9935e1657be0cc4296094dde13f01e0, type: 3}
+  - {fileID: 8095235099774535630, guid: 5e1257d4ac9b59e498b4364685b64bba, type: 3}
   starExplosion: {fileID: 3210153212568079646, guid: bc7736dc57e5a9e438875e69a3a30436,
     type: 3}
   cometaExplosion: {fileID: 6414868552014977921, guid: b37316f43bda20a40b4e8fd5a0235329,
@@ -64,6 +65,7 @@ MonoBehaviour:
   panel: {fileID: 0}
   sunExplosion: {fileID: 326305600809323591, guid: f7567a78459e8ed4fad5a63b7e04ee7b,
     type: 3}
+  orbits: {fileID: 0}
 --- !u!114 &3805391756763720437
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
 
 	public GameObject sunExplosion;
 
+	public GameObject orbits;
+
+	public Transform universe;
+
 	public void StartGame() {
 		StartCoroutine(StartSpawnElement());
 	}
@@ -94,6 +98,11 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	public void ActivatePlanet(int index, GameObject obj) {
+		panel.transform.GetChild(index).gameObject.SetActive(true);
+		panel.transform.GetChild(index).GetComponent<WarpIcon>().objWarp = obj;
+	}
+
 	public void SpawnObject(MatcherObject.type type, int level, Vector3 newPosition) {
 
 		GameObject obj = null;
@@ -101,24 +110,27 @@ public class GameManager : MonoBehaviour
 		switch (type) {
 			case MatcherObject.type.ELEMENT:
 				if (level < 5) {
-					obj = Instantiate(elementsPrefabs[level], newPosition, Quaternion.identity);
+					obj = Instantiate(elementsPrefabs[level], newPosition, Quaternion.identity, universe);
 				} else if (!flagSun) {
-					obj = Instantiate(sunExplosion, newPosition, Quaternion.identity);
+					obj = Instantiate(sunExplosion, newPosition, Quaternion.identity, universe);
 					StartCoroutine(StartSpawnStardust());
 					flagSun = true;
 					return;
 				} else {
-					obj = Instantiate(starExplosion, newPosition, Quaternion.identity);
+					obj = Instantiate(starExplosion, newPosition, Quaternion.identity, universe);
 					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Cometa");
 				}
 				break;
 			case MatcherObject.type.STARDUST:
 				if (level < 5) {
-					obj = Instantiate(stardustPrefabs[level], newPosition, Quaternion.identity);
+					obj = Instantiate(stardustPrefabs[level], newPosition, Quaternion.identity, universe);
 				} else if (countPlanets < 3) {
 					panel.SetActive(true);
-					panel.transform.GetChild(countPlanets).gameObject.SetActive(true);
+					obj = Instantiate(stardustPrefabs[level], newPosition, Quaternion.identity, universe);
+					orbits.SetActive(true);
+					countPlanets++;
 					FindObjectOfType<BackgroundManager>().Next();
+					return;
 				} else {
 					obj = Instantiate(cometaExplosion, newPosition, Quaternion.identity);
 					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Explosão Planetária");
