@@ -25,8 +25,10 @@ public class GameManager : MonoBehaviour
 
 	public Transform universe;
 
+	public BackgroundManager backgrounManager;
+
 	public void StartGame() {
-		StartCoroutine(StartSpawnElement());
+		StartAllAvaliableSpawn();
 	}
 
 	private void Update() {
@@ -57,7 +59,7 @@ public class GameManager : MonoBehaviour
 	IEnumerator StartSpawnElement() {
 		while (true) {
 
-			if (countObjects < 10) {
+			if (countObjects <= 20) {
 
 				Vector3 newPosition = GetPositionSpawn();
 
@@ -80,7 +82,7 @@ public class GameManager : MonoBehaviour
 
 	IEnumerator StartSpawnStardust() {
 		while (true) {
-			if (countObjects < 10) {
+			if (countObjects <= 20) {
 
 				Vector3 newPosition = GetPositionSpawn();
 
@@ -98,6 +100,22 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	public void StartAllAvaliableSpawn() {
+		StopAllSpawn();
+		if (flagSun && countPlanets == 3) {
+			StartCoroutine(StartSpawnElement());
+			StartCoroutine(StartSpawnStardust());
+		} else if (flagSun) {
+			StartCoroutine(StartSpawnStardust());
+		} else {
+			StartCoroutine(StartSpawnElement());
+		}
+	}
+
+	public void StopAllSpawn() {
+		StopAllCoroutines();
+	} 
+
 	public void ActivatePlanet(int index, GameObject obj) {
 		panel.transform.GetChild(index).gameObject.SetActive(true);
 		panel.transform.GetChild(index).GetComponent<WarpIcon>().objWarp = obj;
@@ -110,29 +128,41 @@ public class GameManager : MonoBehaviour
 		switch (type) {
 			case MatcherObject.type.ELEMENT:
 				if (level < 5) {
-					obj = Instantiate(elementsPrefabs[level], newPosition, Quaternion.identity, universe);
+					obj = Instantiate(elementsPrefabs[level], newPosition, Quaternion.identity, spawner);
 				} else if (!flagSun) {
-					obj = Instantiate(sunExplosion, newPosition, Quaternion.identity, universe);
-					StartCoroutine(StartSpawnStardust());
+					Instantiate(sunExplosion, newPosition, Quaternion.identity, universe);
+
+					foreach (GameObject o in spawner) {
+						Destroy(o);
+					}
+
+					StartAllAvaliableSpawn();
+
 					flagSun = true;
+					backgrounManager.Next();
 					return;
 				} else {
-					obj = Instantiate(starExplosion, newPosition, Quaternion.identity, universe);
+					Instantiate(starExplosion, newPosition, Quaternion.identity, universe);
 					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Cometa");
 				}
 				break;
 			case MatcherObject.type.STARDUST:
 				if (level < 5) {
-					obj = Instantiate(stardustPrefabs[level], newPosition, Quaternion.identity, universe);
+					obj = Instantiate(stardustPrefabs[level], newPosition, Quaternion.identity, spawner);
 				} else if (countPlanets < 3) {
 					panel.SetActive(true);
-					obj = Instantiate(stardustPrefabs[level], newPosition, Quaternion.identity, universe);
+					Instantiate(stardustPrefabs[level], newPosition, Quaternion.identity, universe);
 					orbits.SetActive(true);
 					countPlanets++;
-					FindObjectOfType<BackgroundManager>().Next();
+
+					if (countPlanets == 3) {
+						StartAllAvaliableSpawn();
+					}
+
+					backgrounManager.Next();
 					return;
 				} else {
-					obj = Instantiate(cometaExplosion, newPosition, Quaternion.identity);
+					Instantiate(cometaExplosion, newPosition, Quaternion.identity, universe);
 					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Explosão Planetária");
 				}
 				break;

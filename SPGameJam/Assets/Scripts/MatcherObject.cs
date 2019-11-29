@@ -7,7 +7,7 @@ public class MatcherObject : MonoBehaviour
 	[Range(0, 4)]
 	public int level = 0;
 
-	public enum type { ELEMENT, STARDUST };
+	public enum type { ELEMENT, STARDUST, LIGHTNING };
 	public type id;
 
 	public GameObject combineExplosion;
@@ -15,7 +15,7 @@ public class MatcherObject : MonoBehaviour
 	bool isHolding = false;
 
 	public Vector3 dir = Vector3.zero;
-	private float speed = 1f;
+	public float speed = 1f;
 
 	private float currentTime = 0f;
 	private float waitTime = 0.1f;
@@ -101,6 +101,7 @@ public class MatcherObject : MonoBehaviour
 	}
 
 	private void OnBecameInvisible() {
-		Destroy(gameObject);
+		if (level == 0)
+			Destroy(gameObject);
 	}
 }

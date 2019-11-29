@@ -5,6 +5,7 @@ using UnityEngine;
 public class BigBang : MonoBehaviour
 {
 	public Animator anim;
+	public BackgroundManager backgroundManager;
 
 	private void OnMouseDown() {
 		anim.Play("Explosion");
@@ -15,7 +16,7 @@ public class BigBang : MonoBehaviour
 	}
 
 	public void NextAnimation() {
-		FindObjectOfType<BackgroundManager>().Next();
+		backgroundManager.Next();
 	}
 
 	public void FinishAnimation() {
