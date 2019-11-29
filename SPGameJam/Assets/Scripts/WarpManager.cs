@@ -7,6 +7,8 @@ public class WarpManager : MonoBehaviour
 	public Camera cam;
 	public bool inWarp = false;
 
+	private bool isEarthPlanet;
+
    public void StartWarp(bool isEnter, Vector3 pos, GameObject objDest, GameObject activePanel, GameObject deactivePanel, GameObject localObject) {
 		StopAllCoroutines();
 		inWarp = true;
@@ -40,6 +42,11 @@ public class WarpManager : MonoBehaviour
 
 		if (isEnter) {
 			FindObjectOfType<GameManager>().StopAllSpawn();
+
+			if (objDest.GetComponent<EarthPlanet>() && !isEarthPlanet) {
+				FindObjectOfType<DialogueManager>().ShowLife();
+			}
+
 		} else {
 			FindObjectOfType<GameManager>().StartAllAvaliableSpawn();
 		}

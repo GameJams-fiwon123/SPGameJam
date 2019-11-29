@@ -33,8 +33,11 @@ public class GameManager : MonoBehaviour
 
 	public StudioEventEmitter musicUniverse;
 
+	private bool showVisits;
+
 	public void StartGame() {
 		StartAllAvaliableSpawn();
+		FindObjectOfType<DialogueManager>().ShowStar();
 	}
 
 	private void Update() {
@@ -122,9 +125,31 @@ public class GameManager : MonoBehaviour
 		StopAllCoroutines();
 	} 
 
-	public void ActivatePlanet(int index, GameObject obj) {
+	IEnumerator ShowDialoguePlanet(int index, GameObject obj) {
 		panel.transform.GetChild(index).gameObject.SetActive(true);
 		panel.transform.GetChild(index).GetComponent<WarpIcon>().objWarp = obj;
+
+		if (!showVisits) {
+			showVisits = true;
+			FindObjectOfType<DialogueManager>().ShowVisits();
+			yield return new WaitForSeconds(5);
+		}
+
+		switch (index) {
+			case 0:
+				FindObjectOfType<DialogueManager>().ShowHotPlanet();
+				break;
+			case 1:
+				FindObjectOfType<DialogueManager>().ShowEarthPlanet();
+				break;
+			case 2:
+				FindObjectOfType<DialogueManager>().ShowColdPlanet();
+				break;
+		}
+	}
+
+	public void ActivatePlanet(int index, GameObject obj) {
+		StartCoroutine(ShowDialoguePlanet(index, obj));
 	}
 
 	public void SpawnObject(MatcherObject.type type, int level, Vector3 newPosition, bool isEntering) {
@@ -138,18 +163,20 @@ public class GameManager : MonoBehaviour
 				} else if (!flagSun) {
 					Instantiate(sunExplosion, newPosition, Quaternion.identity, universe);
 
-					foreach (GameObject o in spawner) {
-						Destroy(o);
+					foreach (Transform objTransform in spawner) {
+						Destroy(objTransform.gameObject);
 					}
 
+					flagSun = true;
+					FindObjectOfType<DialogueManager>().ShowPlanets();
 					StartAllAvaliableSpawn();
 					musicUniverse.SetParameter("Níveis", 1);
-					flagSun = true;
 					backgrounManager.Next();
 					return;
 				} else {
 					Instantiate(starExplosion, newPosition, Quaternion.identity, universe);
 					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Cometa");
+					FindObjectOfType<DialogueManager>().ShowComet();
 				}
 				break;
 			case MatcherObject.type.STARDUST:
@@ -158,12 +185,14 @@ public class GameManager : MonoBehaviour
 				} else if (countPlanets < 3) {
 					panel.SetActive(true);
 					Instantiate(stardustPrefabs[level], newPosition, Quaternion.identity, universe);
+					FindObjectOfType<DialogueManager>().ShowOrbits();
 					orbits.SetActive(true);
 					countPlanets++;
 					musicUniverse.SetParameter("Níveis", 1+ countPlanets);
 
 					if (countPlanets == 3) {
 						StartAllAvaliableSpawn();
+						FindObjectOfType<DialogueManager>().ShowElementsPlanets();
 					}
 
 					backgrounManager.Next();

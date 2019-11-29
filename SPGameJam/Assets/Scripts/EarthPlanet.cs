@@ -42,6 +42,7 @@ public class EarthPlanet : MonoBehaviour
 	}
 
 	private void OnEnable() {
+
 		StartSpawn();
 	}
 

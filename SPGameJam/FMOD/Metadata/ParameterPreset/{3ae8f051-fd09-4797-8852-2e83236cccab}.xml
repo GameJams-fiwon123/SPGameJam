@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{3ae8f051-fd09-4797-8852-2e83236cccab}">
+        <property name="name">
+            <value>Níveis Caverna</value>
+        </property>
+        <relationship name="folder">
+            <destination>{a4a54c38-8506-44e7-8f9a-fa48c59a3a7d}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{bc690925-6dea-4873-aeaf-614663aff395}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{bc690925-6dea-4873-aeaf-614663aff395}">
+        <property name="maximum">
+            <value>6</value>
+        </property>
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+        <property name="seekSpeed">
+            <value>0.60000002384185791</value>
+        </property>
+    </object>
+</objects>
