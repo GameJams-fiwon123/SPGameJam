@@ -101,6 +101,8 @@ MonoBehaviour:
   id: 0
   combineExplosion: {fileID: 2557659773237693568, guid: a6bc80033ad915747b5e98a8afaa5468,
     type: 3}
+  dir: {x: 0, y: 0, z: 0}
+  speed: 1
 --- !u!95 &6688988556098390238
 Animator:
   serializedVersion: 3

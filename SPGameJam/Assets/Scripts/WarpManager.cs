@@ -31,8 +31,8 @@ public class WarpManager : MonoBehaviour
 			yield return new WaitForSeconds(0.01f);
 
 		}
-		objDest.SetActive(true);
 		cam.transform.position = new Vector3(0f, 0f, -10);
+		objDest.SetActive(true);
 		inWarp = false;
 
 		activePanel.SetActive(true);

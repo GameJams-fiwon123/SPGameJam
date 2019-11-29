@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
 
 	public BackgroundManager backgrounManager;
 
+	public EarthPlanet earthPlanet;
+
 	public void StartGame() {
 		StartAllAvaliableSpawn();
 	}
@@ -121,7 +123,7 @@ public class GameManager : MonoBehaviour
 		panel.transform.GetChild(index).GetComponent<WarpIcon>().objWarp = obj;
 	}
 
-	public void SpawnObject(MatcherObject.type type, int level, Vector3 newPosition) {
+	public void SpawnObject(MatcherObject.type type, int level, Vector3 newPosition, bool isEntering) {
 
 		GameObject obj = null;
 
@@ -166,9 +168,24 @@ public class GameManager : MonoBehaviour
 					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Explosão Planetária");
 				}
 				break;
+			// TODO CREATE MORE CASE
 		}
 
 		if (obj)
 			obj.GetComponent<MatcherObject>().ChangeDirection();
+	}
+
+	public void SendPlanet(GameObject obj, int indexPlanet) {
+		switch (indexPlanet) {
+			case 0:
+				break;
+			case 1:
+				obj.transform.position = Vector3.zero;
+				obj.GetComponent<MatcherObject>().speed = 0.01f;
+				obj.transform.parent = earthPlanet.spawner;
+				break;
+			case 2:
+				break;
+		}
 	}
 }

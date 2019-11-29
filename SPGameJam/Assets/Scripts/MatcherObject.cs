@@ -12,13 +12,17 @@ public class MatcherObject : MonoBehaviour
 
 	public GameObject combineExplosion;
 
-	bool isHolding = false;
+	public bool isHolding = false;
 
 	public Vector3 dir = Vector3.zero;
 	public float speed = 1f;
 
 	private float currentTime = 0f;
 	private float waitTime = 0.1f;
+
+	public int orbitIndex;
+
+	public bool isEntering;
 
 	private void Update() {
 		if (dir != Vector3.zero) {
@@ -29,6 +33,10 @@ public class MatcherObject : MonoBehaviour
 		currentTime += Time.deltaTime;
 		if (currentTime >= waitTime) {
 			currentTime = waitTime;
+		}
+
+		if (isEntering) {
+			GetComponent<Animator>().Play("IdleEarth");
 		}
 	}
 
@@ -48,7 +56,7 @@ public class MatcherObject : MonoBehaviour
 
 	private void OnTriggerStay2D(Collider2D collision) {
 		if (collision.tag == "Wall") {
-			if (level > 0 && currentTime >= waitTime) {
+			if ((level > 0 || isEntering) && currentTime >= waitTime) {
 				float x = Random.Range(dir.x - 0.1f, dir.x + 0.1f);
 				float y = Random.Range(dir.y - 0.1f, dir.y - 0.1f);
 				dir = new Vector3(x, y);
@@ -77,6 +85,12 @@ public class MatcherObject : MonoBehaviour
 
 				Destroy(collision.gameObject);
 				Destroy(gameObject);
+			} else if (id == type.ELEMENT && other.id == type.LIGHTNING && isHolding && level == 0) {
+				FindObjectOfType<GameManager>().SpawnObject(id, level + 1, transform.position, isEntering);
+				Instantiate(combineExplosion, transform.position, Quaternion.identity);
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Combinação Elementos");
+				Destroy(collision.gameObject);
+				Destroy(gameObject);
 			}
 		}
 
@@ -101,7 +115,13 @@ public class MatcherObject : MonoBehaviour
 	}
 
 	private void OnBecameInvisible() {
-		if (level == 0)
+		if (level == 1)
 			Destroy(gameObject);
 	}
+
+	public void Entering() {
+		isEntering = true;
+		FindObjectOfType<GameManager>().SendPlanet(gameObject, orbitIndex);
+	}
+
 }

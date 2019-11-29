@@ -13,7 +13,8 @@ public class Planet : MonoBehaviour
 
 	public bool isHolding = false;
 
-	bool isOrbit = false;
+	public bool isOrbit = false;
+	private int orbitIndex;
 
 	private void Start() {
 		_centre = Vector3.zero;
@@ -23,7 +24,7 @@ public class Planet : MonoBehaviour
 	void Update() {
 		if (!isOrbit) {
 			HoldObject();
-		} else if (!FindObjectOfType<WarpManager>().inWarp){
+		} else if (!FindObjectOfType<WarpManager>().inWarp) {
 			_angle += RotateSpeed * Time.deltaTime;
 
 			var offset = new Vector2(Mathf.Sin(_angle), Mathf.Cos(_angle)) * Radius;
@@ -49,10 +50,21 @@ public class Planet : MonoBehaviour
 				Radius = collision.GetComponent<Orbit>().Radius;
 				sprRenderer.sprite = collision.GetComponent<Orbit>().sprite;
 				collision.GetComponent<CompositeCollider2D>().enabled = false;
-				collision.GetComponent<Orbit>().sprRenderer.color = new Color(1f,1f,1f,0.5f);
-				FindObjectOfType<GameManager>().ActivatePlanet(collision.GetComponent<Orbit>().index, gameObject);
+				collision.GetComponent<Orbit>().sprRenderer.color = new Color(1f, 1f, 1f, 0.5f);
+				orbitIndex = collision.GetComponent<Orbit>().index;
+				FindObjectOfType<GameManager>().ActivatePlanet(orbitIndex, gameObject);
+			}
+		} else if (collision.tag == "Interact" && isOrbit) {
+			if (collision.GetComponent<MatcherObject>().id == MatcherObject.type.ELEMENT &&
+				collision.GetComponent<MatcherObject>().level == 0 && 
+				collision.GetComponent<MatcherObject>().isHolding) {
+				collision.GetComponent<MatcherObject>().speed = 0f;
+				collision.GetComponent<MatcherObject>().orbitIndex = orbitIndex;
+				collision.transform.position = gameObject.transform.position;
+				collision.gameObject.GetComponent<Animator>().SetBool("IsEntering", true);
 			}
 		}
+
 	}
 
 	public void StartOrbit() {
