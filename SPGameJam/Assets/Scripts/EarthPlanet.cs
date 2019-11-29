@@ -29,11 +29,12 @@ public class EarthPlanet : MonoBehaviour
 				int index = Random.Range(0, sky.childCount);
 				Vector3 newPosition = sky.transform.GetChild(index).position;
 
-				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Poeira Entra");
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Raio");
+				yield return new WaitForSeconds(1);
 				GameObject obj = Instantiate(lightningPrefab, newPosition, Quaternion.identity, spawner);
-
 				obj.GetComponent<MatcherObject>().dir = Vector3.down;
 				obj.GetComponent<MatcherObject>().speed = 0.05f;
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Queda");
 			}
 
 			yield return new WaitForSeconds(2);

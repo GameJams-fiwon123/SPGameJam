@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FMODUnity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
 	public GameObject[] elementsPrefabs;
 	public GameObject[] stardustPrefabs;
+	public GameObject[] biologicalPrefabs;
 
 	private int countObjects = 0;
 
@@ -28,6 +30,8 @@ public class GameManager : MonoBehaviour
 	public BackgroundManager backgrounManager;
 
 	public EarthPlanet earthPlanet;
+
+	public StudioEventEmitter musicUniverse;
 
 	public void StartGame() {
 		StartAllAvaliableSpawn();
@@ -139,7 +143,7 @@ public class GameManager : MonoBehaviour
 					}
 
 					StartAllAvaliableSpawn();
-
+					musicUniverse.SetParameter("Níveis", 1);
 					flagSun = true;
 					backgrounManager.Next();
 					return;
@@ -156,6 +160,7 @@ public class GameManager : MonoBehaviour
 					Instantiate(stardustPrefabs[level], newPosition, Quaternion.identity, universe);
 					orbits.SetActive(true);
 					countPlanets++;
+					musicUniverse.SetParameter("Níveis", 1+ countPlanets);
 
 					if (countPlanets == 3) {
 						StartAllAvaliableSpawn();
@@ -168,7 +173,16 @@ public class GameManager : MonoBehaviour
 					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Explosão Planetária");
 				}
 				break;
-			// TODO CREATE MORE CASE
+			case MatcherObject.type.BIOLOGICAL:
+				if (level < 5) {
+					obj = Instantiate(biologicalPrefabs[level], newPosition, Quaternion.identity, earthPlanet.spawner);
+					obj.GetComponent<MatcherObject>().speed = 0.01f;
+					obj.GetComponent<Animator>().Play("IdleEarth");
+					obj.GetComponent<MatcherObject>().isEntering = true;
+				} else {
+					obj = Instantiate(biologicalPrefabs[level], newPosition, Quaternion.identity, earthPlanet.spawner);
+				}
+				break;
 		}
 
 		if (obj)

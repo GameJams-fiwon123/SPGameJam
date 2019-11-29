@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MatcherObject : MonoBehaviour
-{
+public class MatcherObject : MonoBehaviour {
 	[Range(0, 4)]
 	public int level = 0;
 
-	public enum type { ELEMENT, STARDUST, LIGHTNING };
+	public enum type { ELEMENT, STARDUST, BIOLOGICAL };
 	public type id;
 
 	public GameObject combineExplosion;
@@ -46,8 +45,8 @@ public class MatcherObject : MonoBehaviour
 
 	private void HoldObject() {
 		if (Input.GetMouseButton(0) && isHolding) {
-			float x = Mathf.Clamp(Input.mousePosition.x, 10f, Screen.width-10f);
-			float y = Mathf.Clamp(Input.mousePosition.y, 10f, Screen.height-10f);
+			float x = Mathf.Clamp(Input.mousePosition.x, 10f, Screen.width - 10f);
+			float y = Mathf.Clamp(Input.mousePosition.y, 10f, Screen.height - 10f);
 			Vector3 newPosition = Camera.main.ScreenToWorldPoint(new Vector3(x, y));
 			newPosition.z = 0;
 			transform.position = newPosition;
@@ -71,8 +70,8 @@ public class MatcherObject : MonoBehaviour
 		if (collision.tag == "Interact") {
 			MatcherObject other = collision.GetComponent<MatcherObject>();
 
-			if (other.id == id && other.level == level && isHolding) {
-				FindObjectOfType<GameManager>().SpawnObject(id, level+1, transform.position);
+			if (other.id == id && other.level == level && isHolding && !isEntering) {
+				FindObjectOfType<GameManager>().SpawnObject(id, level + 1, transform.position, isEntering);
 				Instantiate(combineExplosion, transform.position, Quaternion.identity);
 				switch (id) {
 					case type.ELEMENT:
@@ -85,13 +84,27 @@ public class MatcherObject : MonoBehaviour
 
 				Destroy(collision.gameObject);
 				Destroy(gameObject);
-			} else if (id == type.ELEMENT && other.id == type.LIGHTNING && isHolding && level == 0) {
+
+			} else if ((id == type.ELEMENT && other.id == type.BIOLOGICAL) || (other.id == type.ELEMENT && id == type.BIOLOGICAL) && isHolding && level == other.level) {
+				FindObjectOfType<GameManager>().SpawnObject(other.id, level + 1, transform.position, isEntering);
+				Instantiate(combineExplosion, transform.position, Quaternion.identity, transform.parent);
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Meleca (Mistura)");
+
+				Destroy(collision.gameObject);
+				Destroy(gameObject);
+			} else if (other.id == id && other.level == level && isHolding && isEntering) {
 				FindObjectOfType<GameManager>().SpawnObject(id, level + 1, transform.position, isEntering);
 				Instantiate(combineExplosion, transform.position, Quaternion.identity);
-				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Combinação Elementos");
+				switch (id) {
+					case type.BIOLOGICAL:
+						FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Meleca (Mistura)");
+						break;
+				}
+
 				Destroy(collision.gameObject);
 				Destroy(gameObject);
 			}
+
 		}
 
 	}
@@ -115,7 +128,7 @@ public class MatcherObject : MonoBehaviour
 	}
 
 	private void OnBecameInvisible() {
-		if (level == 1)
+		if (level == 0 && !isEntering)
 			Destroy(gameObject);
 	}
 

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3805391756763720436}
   - component: {fileID: 3805391756763720439}
-  - component: {fileID: 3805391756763720437}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -57,6 +56,12 @@ MonoBehaviour:
   - {fileID: 2670152725619239725, guid: 23da2ca7ceff5ab4ea18f66bd77dc385, type: 3}
   - {fileID: 579024584307757802, guid: a9935e1657be0cc4296094dde13f01e0, type: 3}
   - {fileID: 8095235099774535630, guid: 5e1257d4ac9b59e498b4364685b64bba, type: 3}
+  biologicalPrefabs:
+  - {fileID: 8608500005477697652, guid: dcb967a8f9284ee4394bc828daa92f35, type: 3}
+  - {fileID: 21143989464470489, guid: fcc021eed26152a4380312fd4e8df409, type: 3}
+  - {fileID: 21143989464470489, guid: 7d09f57ee18fb8c48bca3adbd1459e06, type: 3}
+  - {fileID: 21143989464470489, guid: f01fb31b2397eff439e782dec0cc0ab2, type: 3}
+  - {fileID: 21143989464470489, guid: 644b09f9009b7384faab55a2957ec123, type: 3}
   starExplosion: {fileID: 3210153212568079646, guid: bc7736dc57e5a9e438875e69a3a30436,
     type: 3}
   cometaExplosion: {fileID: 6414868552014977921, guid: b37316f43bda20a40b4e8fd5a0235329,
@@ -66,26 +71,7 @@ MonoBehaviour:
   sunExplosion: {fileID: 326305600809323591, guid: f7567a78459e8ed4fad5a63b7e04ee7b,
     type: 3}
   orbits: {fileID: 0}
---- !u!114 &3805391756763720437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3805391756763720438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: "event:/M\xFAsicas/Universo"
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
+  universe: {fileID: 0}
+  backgrounManager: {fileID: 0}
+  earthPlanet: {fileID: 0}
+  music: {fileID: 0}

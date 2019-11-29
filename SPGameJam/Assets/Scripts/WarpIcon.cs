@@ -13,10 +13,12 @@ public class WarpIcon : MonoBehaviour
 	public GameObject deactivePanel;
 
 	public void ZoomIn() {
+		FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Zoom In");
 		FindObjectOfType<WarpManager>().StartWarp(true, objWarp.transform.position, objDest, activePanel, deactivePanel, LocalObject);
 	}
 
 	public void ZoomOut() {
+		FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Zoom Out");
 		FindObjectOfType<WarpManager>().StartWarp(false, Vector3.zero, objDest, activePanel, deactivePanel, LocalObject);
 	}
 }
