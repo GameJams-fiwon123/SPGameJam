@@ -9,9 +9,12 @@ public class GameManager : MonoBehaviour
 	public GameObject[] stardustPrefabs;
 	public GameObject[] biologicalPrefabs;
 
+	public GameObject[] earthAreaPrefabs;
+
 	private int countObjects = 0;
 
 	private int countPlanets = 0;
+	private int countAnimals = 0;
 	private bool flagSun = false;
 
 	public GameObject starExplosion;
@@ -32,6 +35,7 @@ public class GameManager : MonoBehaviour
 	public EarthPlanet earthPlanet;
 
 	public StudioEventEmitter musicUniverse;
+
 
 	private bool showVisits;
 
@@ -152,6 +156,27 @@ public class GameManager : MonoBehaviour
 		StartCoroutine(ShowDialoguePlanet(index, obj));
 	}
 
+	public void SpawnInArea(Area.type type, Vector3 newPosition) {
+		switch (type) {
+			case Area.type.SKY:
+				countAnimals++;
+				Instantiate(earthAreaPrefabs[0], newPosition, Quaternion.identity, earthPlanet.transform);
+				break;
+			case Area.type.WATER:
+				countAnimals++;
+				Instantiate(earthAreaPrefabs[1], newPosition, Quaternion.identity, earthPlanet.transform);
+				break;
+			case Area.type.MOUNTAIN:
+				countAnimals++;
+				Instantiate(earthAreaPrefabs[2], newPosition, Quaternion.identity, earthPlanet.transform);
+				break;
+			case Area.type.TERRAIN:
+				countAnimals++;
+				Instantiate(earthAreaPrefabs[3], newPosition, Quaternion.identity, earthPlanet.transform);
+				break;
+		}
+	}
+
 	public void SpawnObject(MatcherObject.type type, int level, Vector3 newPosition, bool isEntering) {
 
 		GameObject obj = null;
@@ -208,9 +233,7 @@ public class GameManager : MonoBehaviour
 					obj.GetComponent<MatcherObject>().speed = 0.01f;
 					obj.GetComponent<Animator>().Play("IdleEarth");
 					obj.GetComponent<MatcherObject>().isEntering = true;
-				} else {
-					obj = Instantiate(biologicalPrefabs[level], newPosition, Quaternion.identity, earthPlanet.spawner);
-				}
+				} 
 				break;
 		}
 

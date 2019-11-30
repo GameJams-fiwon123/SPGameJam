@@ -95,11 +95,8 @@ public class MatcherObject : MonoBehaviour {
 			} else if (other.id == id && other.level == level && isHolding && isEntering) {
 				FindObjectOfType<GameManager>().SpawnObject(id, level + 1, transform.position, isEntering);
 				Instantiate(combineExplosion, transform.position, Quaternion.identity);
-				switch (id) {
-					case type.BIOLOGICAL:
-						FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Meleca (Mistura)");
-						break;
-				}
+
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Meleca (Mistura)");
 
 				Destroy(collision.gameObject);
 				Destroy(gameObject);

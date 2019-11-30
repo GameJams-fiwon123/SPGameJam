@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: event:/SFX/Elemento Entra
   guid: 5b1cd8aa7531db48b3c8d0bb9938c0c7
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -46,6 +46,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 950
+--- !u!114 &-7824868865514126847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Planeta habit\xE1vel/Mar"
+  m_EditorClassIdentifier: 
+  Name: Mar
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-7483131277313889175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +101,7 @@ MonoBehaviour:
   Path: "event:/SFX/\xC1gua - Peixe"
   guid: d99437d55fdfeb41a26a6ebba5ac0fc8
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -125,7 +142,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6089659576765276413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +159,7 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6062712814523290409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +197,23 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 1712
+  Exists: 1
+--- !u!114 &-5477679980614665660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Universo/N\xEDveis"
+  m_EditorClassIdentifier: 
+  Name: "N\xEDveis"
+  Min: 0
+  Max: 4
+  Default: 0
   Exists: 1
 --- !u!114 &-5436739514648799386
 MonoBehaviour:
@@ -265,7 +299,7 @@ MonoBehaviour:
   Path: "event:/SFX/Combina\xE7\xE3o Elementos"
   guid: d454506071a24740820c7ee351524519
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -288,15 +322,15 @@ MonoBehaviour:
   Path: "event:/M\xFAsicas/Planeta habit\xE1vel"
   guid: f685ac06a9b09d4b87f81ba1cc891284
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -3895366854024058156}
-  - {fileID: -57072825037553036}
-  - {fileID: -97383547128123468}
-  - {fileID: -6595269069350473349}
+  - {fileID: -42473346926994185}
+  - {fileID: 1800485929351069540}
+  - {fileID: 8248260826813875314}
+  - {fileID: -7824868865514126847}
   MinDistance: 0
   MaxDistance: 0
   Length: 23992
@@ -315,7 +349,7 @@ MonoBehaviour:
   Path: "event:/SFX/R\xE9ptil - Terra"
   guid: 420f54861653ee4b8bb34a17f26060a4
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -339,7 +373,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3784458033194215651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +389,7 @@ MonoBehaviour:
   Path: event:/SFX/Queda
   guid: e94576419decaa4ebdbce46c32b5203d
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -378,7 +412,7 @@ MonoBehaviour:
   Path: event:/SFX/Raio
   guid: 8da0b7733710034287ef73249c677032
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -447,7 +481,7 @@ MonoBehaviour:
   Path: event:/SFX/Meleca (Mistura)
   guid: bc3a6dfe364085479c846b0c921818b4
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -528,7 +562,7 @@ MonoBehaviour:
   Path: event:/SFX/Cometa
   guid: 10af2315567a984db93365c4e5983331
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -575,7 +609,7 @@ MonoBehaviour:
   Path: event:/SFX/Poeira Entra
   guid: cdd8aef6d38e364e9586f5b59423687f
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -621,12 +655,12 @@ MonoBehaviour:
   Path: "event:/M\xFAsicas/Universo"
   guid: e40982e0a4953c43ada347556c0fb837
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -6089659576765276413}
+  - {fileID: -5477679980614665660}
   MinDistance: 0
   MaxDistance: 0
   Length: 64000
@@ -681,7 +715,7 @@ MonoBehaviour:
   lastModified: 637103752433670515
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-189522124722165506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -697,7 +731,7 @@ MonoBehaviour:
   Path: "event:/M\xFAsicas/Planeta Frio"
   guid: 6102d5cb5e0f9d4fa3c26a96522c8a8c
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -721,7 +755,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-57072825037553036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,6 +769,23 @@ MonoBehaviour:
   m_Name: "parameter:/Planeta habit\xE1vel/Montanha"
   m_EditorClassIdentifier: 
   Name: Montanha
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-42473346926994185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Planeta habit\xE1vel/Terra"
+  m_EditorClassIdentifier: 
+  Name: Terra
   Min: 0
   Max: 1
   Default: 0
@@ -799,7 +850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 555569898959985617}
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   EditorEvents:
   - {fileID: 9007548359847555697}
   - {fileID: -2907066551951540828}
@@ -822,12 +873,13 @@ MonoBehaviour:
   - {fileID: 1440610227444842265}
   - {fileID: -3784458033194215651}
   - {fileID: -4377350280430021969}
+  - {fileID: 6593817489523833092}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   StringsBanks:
   - {fileID: 555569898959985617}
-  stringsBankWriteTime: 637103752434200523
+  stringsBankWriteTime: 637106445850042955
   cacheVersion: 3
 --- !u!114 &555569898959985617
 MonoBehaviour:
@@ -843,11 +895,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Build/Desktop/Master Bank.strings.bank
   SubDir: 
-  lastModified: 637103752434200523
+  lastModified: 637106445850042955
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1712
+    Value: 1980
   Exists: 1
 --- !u!114 &662741378667146931
 MonoBehaviour:
@@ -864,7 +916,7 @@ MonoBehaviour:
   Path: "event:/SFX/Explos\xE3o Estrelar"
   guid: 9f4eab99513957498a439dc718ae59cb
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -927,7 +979,7 @@ MonoBehaviour:
   Path: "event:/SFX/P\xE1ssaro - C\xE9u"
   guid: 14ed977325305c41a4139647155c7f67
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -950,7 +1002,7 @@ MonoBehaviour:
   Path: event:/SFX/Roedor - Montanha
   guid: a5a439c9d9c4214eaf1ff975fc3cf232
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -973,7 +1025,7 @@ MonoBehaviour:
   Path: "event:/SFX/Explos\xE3o Planet\xE1ria"
   guid: e4526e2e3fd845499a32e3754467e56d
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -981,6 +1033,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3864
+--- !u!114 &1800485929351069540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Planeta habit\xE1vel/Montanha"
+  m_EditorClassIdentifier: 
+  Name: Montanha
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &2576840436342576857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1065,6 +1134,24 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &3482501127648245004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Build/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 637106445849993083
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &3676332822669909338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1080,7 +1167,7 @@ MonoBehaviour:
   Path: event:/SFX/Mato - Terra
   guid: 69399f9bd4801c468a5b449d3359673e
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1126,7 +1213,7 @@ MonoBehaviour:
   Path: event:/SFX/Zoom Out
   guid: bf6e5e52df9eeb43ab2937241f3b2879
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1149,7 +1236,7 @@ MonoBehaviour:
   Path: "event:/M\xFAsicas/Planeta Quente"
   guid: 42ea24923f1682408c5693fbc9ad10b8
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1172,7 +1259,7 @@ MonoBehaviour:
   Path: "event:/SFX/Combina\xE7\xE3o Poeiras"
   guid: d333873c3d8cab4bb00c141c19a0bc56
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1306,6 +1393,29 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &6593817489523833092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SFX/Parab\xE9ns!"
+  m_EditorClassIdentifier: 
+  Path: "event:/SFX/Parab\xE9ns!"
+  guid: 9c77c5f2cb204248baa84842d7c98a15
+  Banks:
+  - {fileID: 3482501127648245004}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4500
 --- !u!114 &8213855404909178395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1323,6 +1433,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &8248260826813875314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Planeta habit\xE1vel/C\xE9u"
+  m_EditorClassIdentifier: 
+  Name: "C\xE9u"
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &8701259868409311042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1361,7 +1488,7 @@ MonoBehaviour:
   Path: event:/SFX/Zoom In
   guid: 0e268b2a09077a4fa70854b85cbfa703
   Banks:
-  - {fileID: -294560472235928403}
+  - {fileID: 3482501127648245004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

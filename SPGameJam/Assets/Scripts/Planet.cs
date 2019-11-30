@@ -49,7 +49,7 @@ public class Planet : MonoBehaviour
 				RotateSpeed = collision.GetComponent<Orbit>().RotateSpeed;
 				Radius = collision.GetComponent<Orbit>().Radius;
 				sprRenderer.sprite = collision.GetComponent<Orbit>().sprite;
-				collision.GetComponent<CompositeCollider2D>().enabled = false;
+				collision.GetComponent<CompositeCollider2D>().isTrigger = false;
 				collision.GetComponent<Orbit>().sprRenderer.color = new Color(1f, 1f, 1f, 0.5f);
 				orbitIndex = collision.GetComponent<Orbit>().index;
 				FindObjectOfType<GameManager>().ActivatePlanet(orbitIndex, gameObject);
