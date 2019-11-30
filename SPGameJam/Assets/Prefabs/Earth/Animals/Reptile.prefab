@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4357753780403050400}
   - component: {fileID: 4357753780403050404}
   - component: {fileID: 4357753780403050407}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Reptile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

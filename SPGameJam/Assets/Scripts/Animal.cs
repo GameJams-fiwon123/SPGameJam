@@ -12,6 +12,10 @@ public class Animal : MonoBehaviour
 
 	public bool isEntering = true;
 
+	private void Start() {
+		ChangeDirection();
+	}
+
 	private void Update() {
 		if (dir != Vector3.zero) {
 			Move();
@@ -39,5 +43,13 @@ public class Animal : MonoBehaviour
 				currentTime = 0f;
 			}
 		}
+	}
+
+	public void ChangeDirection() {
+		float x = Random.Range(-1f, 1f);
+		float y = Random.Range(-1f, 1f);
+
+		dir.Set(x, y, 0f);
+		dir = dir.normalized;
 	}
 }

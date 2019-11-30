@@ -176,6 +176,8 @@ public class GameManager : MonoBehaviour
 				Instantiate(earthAreaPrefabs[3], newPosition, Quaternion.identity, earthPlanet.transform);
 				break;
 		}
+
+		earthPlanet.backgrounManager.Next();
 	}
 
 	public void SpawnObject(MatcherObject.type type, int level, Vector3 newPosition) {
