@@ -22,9 +22,6 @@ public class Animal : MonoBehaviour
 			currentTime = waitTime;
 		}
 
-		if (isEntering) {
-			GetComponent<Animator>().Play("IdleEarth");
-		}
 	}
 
 	private void Move() {

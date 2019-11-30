@@ -178,7 +178,7 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	public void SpawnObject(MatcherObject.type type, int level, Vector3 newPosition, bool isEntering) {
+	public void SpawnObject(MatcherObject.type type, int level, Vector3 newPosition) {
 
 		GameObject obj = null;
 
@@ -231,9 +231,7 @@ public class GameManager : MonoBehaviour
 			case MatcherObject.type.BIOLOGICAL:
 				if (level < 5) {
 					obj = Instantiate(biologicalPrefabs[level], newPosition, Quaternion.identity, earthPlanet.spawner);
-					obj.GetComponent<MatcherObject>().speed = 0.01f;
-					obj.GetComponent<Animator>().Play("IdleEarth");
-					obj.GetComponent<MatcherObject>().isEntering = true;
+					obj.GetComponent<MatcherObject>().speed = 1f;
 				} 
 				break;
 		}
@@ -247,8 +245,8 @@ public class GameManager : MonoBehaviour
 			case 0:
 				break;
 			case 1:
-				obj.transform.position = Vector3.zero;
-				obj.GetComponent<MatcherObject>().speed = 0.01f;
+				obj.transform.position = new Vector3(50f, 0f, 0f);
+				obj.GetComponent<MatcherObject>().speed = 1f;
 				obj.transform.parent = earthPlanet.spawner;
 				break;
 			case 2:

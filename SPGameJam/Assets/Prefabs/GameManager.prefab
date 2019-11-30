@@ -65,8 +65,8 @@ MonoBehaviour:
   earthAreaPrefabs:
   - {fileID: 6134068229761612561, guid: bbfc78020069a094ea0eed54d81b37e8, type: 3}
   - {fileID: 1307201392481909820, guid: ea0c0211a89f8434dba449808206fbe9, type: 3}
-  - {fileID: 4357753780403050403, guid: 785e2764c1f558c4395c0d67d45ce646, type: 3}
   - {fileID: 8152212717938568453, guid: c90f8fdea55c11941bbd1480be16b24e, type: 3}
+  - {fileID: 4357753780403050403, guid: 785e2764c1f558c4395c0d67d45ce646, type: 3}
   starExplosion: {fileID: 3210153212568079646, guid: bc7736dc57e5a9e438875e69a3a30436,
     type: 3}
   cometaExplosion: {fileID: 6414868552014977921, guid: b37316f43bda20a40b4e8fd5a0235329,

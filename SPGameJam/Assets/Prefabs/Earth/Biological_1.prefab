@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8608500005477697655}
   - component: {fileID: 8608500005477697641}
   - component: {fileID: 8608500005477697643}
-  - component: {fileID: 3079654485238198167}
+  - component: {fileID: 4155870465153664898}
   m_Layer: 10
   m_Name: Biological_1
   m_TagString: Interact
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8608500005477697652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -125,8 +125,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &3079654485238198167
-BoxCollider2D:
+--- !u!60 &4155870465153664898
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -148,6 +148,9 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.3112795, y: 8.5625}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.8767832, y: -4.4593806}
+      - {x: 1.9124936, y: 0.77532893}
+      - {x: 1.1742892, y: 5.09083}
+      - {x: -1.8680384, y: -0.46956336}

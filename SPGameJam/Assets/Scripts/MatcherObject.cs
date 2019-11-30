@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MatcherObject : MonoBehaviour {
+public class MatcherObject : MonoBehaviour
+{
 	[Range(0, 4)]
 	public int level = 0;
 
@@ -34,9 +35,6 @@ public class MatcherObject : MonoBehaviour {
 			currentTime = waitTime;
 		}
 
-		if (isEntering) {
-			GetComponent<Animator>().Play("IdleEarth");
-		}
 	}
 
 	private void Move() {
@@ -55,7 +53,6 @@ public class MatcherObject : MonoBehaviour {
 
 	private void OnTriggerStay2D(Collider2D collision) {
 		if (collision.tag == "Wall") {
-			Debug.Log(gameObject.name);
 			if ((level > 0 || isEntering) && currentTime >= waitTime) {
 				float x = Random.Range(dir.x - 0.1f, dir.x + 0.1f);
 				float y = Random.Range(dir.y - 0.1f, dir.y - 0.1f);
@@ -63,6 +60,14 @@ public class MatcherObject : MonoBehaviour {
 				dir = -dir;
 				dir = dir.normalized;
 				currentTime = 0f;
+			} 
+		} else if (collision.tag == "Area") {
+			if (!Input.GetMouseButton(0) && isHolding) {
+				if (id == type.BIOLOGICAL && level == 4) {
+					FindObjectOfType<GameManager>().SpawnInArea(collision.GetComponent<Area>().id, collision.transform.position);
+					Destroy(collision.gameObject);
+					Destroy(gameObject);
+				}
 			}
 		}
 	}
@@ -71,9 +76,25 @@ public class MatcherObject : MonoBehaviour {
 		if (collision.tag == "Interact") {
 			MatcherObject other = collision.GetComponent<MatcherObject>();
 
-			if (other.id == id && other.level == level && isHolding && !isEntering) {
-				FindObjectOfType<GameManager>().SpawnObject(id, level + 1, transform.position, isEntering);
+
+			if (((id == type.ELEMENT && other.id == type.BIOLOGICAL) || (other.id == type.ELEMENT && id == type.BIOLOGICAL)) && isHolding && level == 0 && other.level == 0) {
+				FindObjectOfType<GameManager>().SpawnObject(type.BIOLOGICAL, level + 1, transform.position);
+				Instantiate(combineExplosion, transform.position, Quaternion.identity, transform.parent);
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Meleca (Mistura)");
+
+				Destroy(collision.gameObject);
+				Destroy(gameObject);
+			} else if (other.id == id && other.level == level && isHolding && !isEntering) {
+
+				if (id == type.BIOLOGICAL && level == 0) {
+					return;
+				} else if (id == type.BIOLOGICAL && level == 4) {
+					return;
+				}
+
+				FindObjectOfType<GameManager>().SpawnObject(id, level + 1, transform.position);
 				Instantiate(combineExplosion, transform.position, Quaternion.identity);
+
 				switch (id) {
 					case type.ELEMENT:
 						FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Combinação Elementos");
@@ -81,26 +102,14 @@ public class MatcherObject : MonoBehaviour {
 					case type.STARDUST:
 						FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Combinação Poeiras");
 						break;
+					case type.BIOLOGICAL:
+						FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Meleca (Mistura)");
+						break;
 				}
 
 				Destroy(collision.gameObject);
 				Destroy(gameObject);
 
-			} else if (((id == type.ELEMENT && other.id == type.BIOLOGICAL) || (other.id == type.ELEMENT && id == type.BIOLOGICAL)) && isHolding && level == other.level) {
-				FindObjectOfType<GameManager>().SpawnObject(other.id, level + 1, transform.position, isEntering);
-				Instantiate(combineExplosion, transform.position, Quaternion.identity, transform.parent);
-				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Meleca (Mistura)");
-
-				Destroy(collision.gameObject);
-				Destroy(gameObject);
-			} else if (other.id == id && other.level == level && isHolding && isEntering) {
-				FindObjectOfType<GameManager>().SpawnObject(id, level + 1, transform.position, isEntering);
-				Instantiate(combineExplosion, transform.position, Quaternion.identity);
-
-				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Meleca (Mistura)");
-
-				Destroy(collision.gameObject);
-				Destroy(gameObject);
 			}
 
 		}
@@ -128,6 +137,14 @@ public class MatcherObject : MonoBehaviour {
 	private void OnBecameInvisible() {
 		if (level == 0 && !isEntering)
 			Destroy(gameObject);
+	}
+
+	private void OnBecameVisible() {
+		gameObject.layer = 10;
+	}
+
+	public void StartEntering() {
+		gameObject.layer = 13;
 	}
 
 	public void Entering() {

@@ -9,6 +9,8 @@ public class EarthPlanet : MonoBehaviour
 	public GameObject lightningPrefab;
 	public Transform spawner;
 
+	public BackgroundManager backgrounManager;
+
 	private int countObjects = 0;
 
 	private void Update() {
@@ -33,7 +35,7 @@ public class EarthPlanet : MonoBehaviour
 				yield return new WaitForSeconds(1);
 				GameObject obj = Instantiate(lightningPrefab, newPosition, Quaternion.identity, spawner);
 				obj.GetComponent<MatcherObject>().dir = Vector3.down;
-				obj.GetComponent<MatcherObject>().speed = 0.05f;
+				//obj.GetComponent<MatcherObject>().speed = 0.05f;
 				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Queda");
 			}
 
