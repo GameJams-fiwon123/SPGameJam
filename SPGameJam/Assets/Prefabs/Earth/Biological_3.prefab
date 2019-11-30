@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 21143989464470485}
   - component: {fileID: 21143989464470484}
   - component: {fileID: -9021690046328717559}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Biological_3
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.4225, y: 3.43}
+    oldSize: {x: 3.876, y: 5.488}
     newSize: {x: 9.8949995, y: 10.072047}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

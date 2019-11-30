@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4042824667503732201}
   - component: {fileID: 5656327316031983521}
   - component: {fileID: 71982948376160215}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Element3
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -101,8 +101,11 @@ MonoBehaviour:
   id: 0
   combineExplosion: {fileID: 2557659773237693568, guid: a6bc80033ad915747b5e98a8afaa5468,
     type: 3}
+  isHolding: 0
   dir: {x: 0, y: 0, z: 0}
   speed: 1
+  orbitIndex: 0
+  isEntering: 0
 --- !u!95 &4042824667503732207
 Animator:
   serializedVersion: 3

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2670152725619239719}
   - component: {fileID: 2676955416428238464}
   - component: {fileID: 746231807261443041}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Stardust4
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -101,7 +101,11 @@ MonoBehaviour:
   id: 1
   combineExplosion: {fileID: 2557659773237693568, guid: a6bc80033ad915747b5e98a8afaa5468,
     type: 3}
+  isHolding: 0
   dir: {x: 0, y: 0, z: 0}
+  speed: 1
+  orbitIndex: 0
+  isEntering: 0
 --- !u!95 &2670152725619239713
 Animator:
   serializedVersion: 3
@@ -642,7 +646,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 18.23, y: 19.32}
+    oldSize: {x: 6.076667, y: 6.44}
     newSize: {x: 18.23, y: 19.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

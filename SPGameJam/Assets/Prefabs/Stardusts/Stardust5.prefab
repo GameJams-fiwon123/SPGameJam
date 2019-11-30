@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 579024584307757792}
   - component: {fileID: 4861333377718703798}
   - component: {fileID: 6579623367519299191}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Stardust5
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -101,6 +101,11 @@ MonoBehaviour:
   id: 1
   combineExplosion: {fileID: 2557659773237693568, guid: a6bc80033ad915747b5e98a8afaa5468,
     type: 3}
+  isHolding: 0
+  dir: {x: 0, y: 0, z: 0}
+  speed: 1
+  orbitIndex: 0
+  isEntering: 0
 --- !u!95 &579024584307757798
 Animator:
   serializedVersion: 3

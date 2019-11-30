@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 21143989464470485}
   - component: {fileID: 21143989464470484}
   - component: {fileID: -439581980361627607}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Biological_2
   m_TagString: Interact
   m_Icon: {fileID: 0}

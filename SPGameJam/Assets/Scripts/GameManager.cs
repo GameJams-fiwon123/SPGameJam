@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 	public GameObject[] stardustPrefabs;
 	public GameObject[] biologicalPrefabs;
 
+	[Tooltip("Sky, Water, Mountain, Terrain")]
 	public GameObject[] earthAreaPrefabs;
 
 	private int countObjects = 0;

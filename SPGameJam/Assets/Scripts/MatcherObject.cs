@@ -34,7 +34,7 @@ public class MatcherObject : MonoBehaviour {
 			currentTime = waitTime;
 		}
 
-		if (isEntering) {
+		if (isEntering && id != type.BIOLOGICAL) {
 			GetComponent<Animator>().Play("IdleEarth");
 		}
 	}
@@ -55,6 +55,7 @@ public class MatcherObject : MonoBehaviour {
 
 	private void OnTriggerStay2D(Collider2D collision) {
 		if (collision.tag == "Wall") {
+			Debug.Log(gameObject.name);
 			if ((level > 0 || isEntering) && currentTime >= waitTime) {
 				float x = Random.Range(dir.x - 0.1f, dir.x + 0.1f);
 				float y = Random.Range(dir.y - 0.1f, dir.y - 0.1f);

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8608500005477697641}
   - component: {fileID: 8608500005477697643}
   - component: {fileID: 3079654485238198167}
-  m_Layer: 0
-  m_Name: Lightning
+  m_Layer: 10
+  m_Name: Biological_1
   m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
