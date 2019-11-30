@@ -58,9 +58,11 @@ public class Planet : MonoBehaviour
 			if (collision.GetComponent<MatcherObject>().id == MatcherObject.type.ELEMENT &&
 				collision.GetComponent<MatcherObject>().level == 0 && 
 				collision.GetComponent<MatcherObject>().isHolding) {
-				collision.GetComponent<MatcherObject>().speed = 0f;
-				collision.GetComponent<MatcherObject>().orbitIndex = orbitIndex;
 				collision.transform.position = gameObject.transform.position;
+				collision.GetComponent<MatcherObject>().speed = 0f;
+				collision.GetComponent<MatcherObject>().isHolding = false;
+				collision.GetComponent<MatcherObject>().orbitIndex = orbitIndex;
+
 				collision.gameObject.GetComponent<Animator>().SetBool("IsEntering", true);
 			}
 		}

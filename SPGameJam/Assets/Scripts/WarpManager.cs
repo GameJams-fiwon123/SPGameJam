@@ -16,6 +16,8 @@ public class WarpManager : MonoBehaviour
 		if (isEnter) {
 			StartCoroutine(Warp(isEnter, -0.1f, pos, 0.1f, objDest, activePanel, deactivePanel, localObject));
 		} else {
+			cam.orthographicSize = 0.1f;
+			cam.transform.position = new Vector3(0f, 0f, -10);
 			StartCoroutine(Warp(isEnter, 0.1f, pos, 5f, objDest, activePanel, deactivePanel, localObject ));
 		}
 
@@ -33,7 +35,13 @@ public class WarpManager : MonoBehaviour
 			yield return new WaitForSeconds(0.01f);
 
 		}
-		cam.transform.position = new Vector3(0f, 0f, -10);
+		cam.orthographicSize = 5f;
+
+		if (isEnter) {
+			cam.transform.position = new Vector3(50f, 0f, -10);
+		} else {
+			cam.transform.position = new Vector3(0f, 0f, -10);
+		}
 		objDest.SetActive(true);
 		inWarp = false;
 

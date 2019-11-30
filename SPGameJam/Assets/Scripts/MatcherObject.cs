@@ -34,7 +34,7 @@ public class MatcherObject : MonoBehaviour {
 			currentTime = waitTime;
 		}
 
-		if (isEntering && id != type.BIOLOGICAL) {
+		if (isEntering) {
 			GetComponent<Animator>().Play("IdleEarth");
 		}
 	}
@@ -86,7 +86,7 @@ public class MatcherObject : MonoBehaviour {
 				Destroy(collision.gameObject);
 				Destroy(gameObject);
 
-			} else if ((id == type.ELEMENT && other.id == type.BIOLOGICAL) || (other.id == type.ELEMENT && id == type.BIOLOGICAL) && isHolding && level == other.level) {
+			} else if (((id == type.ELEMENT && other.id == type.BIOLOGICAL) || (other.id == type.ELEMENT && id == type.BIOLOGICAL)) && isHolding && level == other.level) {
 				FindObjectOfType<GameManager>().SpawnObject(other.id, level + 1, transform.position, isEntering);
 				Instantiate(combineExplosion, transform.position, Quaternion.identity, transform.parent);
 				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Meleca (Mistura)");

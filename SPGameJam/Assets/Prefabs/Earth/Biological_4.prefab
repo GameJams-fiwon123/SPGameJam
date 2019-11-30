@@ -170,4 +170,4 @@ MonoBehaviour:
   dir: {x: 0, y: 0, z: 0}
   speed: 1
   orbitIndex: 0
-  isEntering: 0
+  isEntering: 1
