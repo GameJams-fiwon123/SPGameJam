@@ -8,7 +8,7 @@ public class BackgroundManager : MonoBehaviour
 
 	public SpriteRenderer sprRenderer1, sprRenderer2;
 	public Sprite[] sprites;
-	int indexSprite = 0;
+	public int indexSprite = 0;
 
 	// Start is called before the first frame update
 	void Start() {

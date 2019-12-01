@@ -15,7 +15,13 @@ public class GameManager : MonoBehaviour
 	private int countObjects = 0;
 
 	public int countPlanets = 0;
-	private int countAnimals = 0;
+
+	private int countSky = 0;
+	private int countWater = 0;
+	private int countMountain = 0;
+	private int countTerrain = 0;
+	private int countLife = 0;
+
 	private bool flagSun = false;
 
 	public GameObject starExplosion;
@@ -50,7 +56,7 @@ public class GameManager : MonoBehaviour
 	}
 
 	private Vector3 GetPositionSpawn() {
-		float y = Random.Range(10f, Screen.height-10);
+		float y = Random.Range(10f, Screen.height - 10);
 		float x = 0;
 
 		int value = Random.Range(0, 2);
@@ -83,11 +89,11 @@ public class GameManager : MonoBehaviour
 				GameObject obj = Instantiate(elementsPrefabs[0], newPosition, Quaternion.identity, spawner);
 				obj.name = "Element1";
 
-					if (newPosition.x < 0f) {
-						obj.GetComponent<MatcherObject>().dir = Vector3.right;
-					} else {
-						obj.GetComponent<MatcherObject>().dir = Vector3.left;
-					}
+				if (newPosition.x < 0f) {
+					obj.GetComponent<MatcherObject>().dir = Vector3.right;
+				} else {
+					obj.GetComponent<MatcherObject>().dir = Vector3.left;
+				}
 			}
 
 			yield return new WaitForSeconds(2);
@@ -128,7 +134,7 @@ public class GameManager : MonoBehaviour
 
 	public void StopAllSpawn() {
 		StopAllCoroutines();
-	} 
+	}
 
 
 	public void ActivatePlanet(int index, GameObject obj) {
@@ -147,36 +153,60 @@ public class GameManager : MonoBehaviour
 		if (countPlanets == 3) {
 			StartAllAvaliableSpawn();
 			FindObjectOfType<DialogueManager>().ShowElementsPlanets();
+
+			foreach (Transform objTransform in spawner) {
+				Destroy(objTransform.gameObject);
+			}
 		}
 	}
 
-	public void SpawnInArea(Area.type type, Vector3 newPosition) {
+	public void SpawnInArea(Area.type type, Vector3 newPosition, GameObject areaObject) {
 		switch (type) {
 			case Area.type.SKY:
-				countAnimals++;
+				countSky++;
+
+				if (countSky == 3)
+					Destroy(areaObject);
+
 				Instantiate(earthAreaPrefabs[0], newPosition, Quaternion.identity, earthPlanet.transform);
 				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Pássaro - Céu");
 				break;
 			case Area.type.WATER:
-				countAnimals++;
+				countWater++;
+
+				if (countWater == 3)
+					Destroy(areaObject);
+
 				Instantiate(earthAreaPrefabs[1], newPosition, Quaternion.identity, earthPlanet.transform);
 				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Água - Peixe");
 				break;
 			case Area.type.MOUNTAIN:
-				countAnimals++;
+				countMountain++;
+
+				if (countMountain == 3)
+					Destroy(areaObject);
+
 				Instantiate(earthAreaPrefabs[2], newPosition, Quaternion.identity, earthPlanet.transform);
 				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Roedor - Montanha");
 				break;
 			case Area.type.TERRAIN:
-				countAnimals++;
-				Instantiate(earthAreaPrefabs[3], newPosition, Quaternion.identity, earthPlanet.transform);
-				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Réptil - Terra");
+				countTerrain++;
+
+				if (countTerrain == 6)
+					Destroy(areaObject);
+				else if (earthPlanet.backgrounManager.indexSprite == 3) {
+					Instantiate(earthAreaPrefabs[3], newPosition, Quaternion.identity, earthPlanet.transform);
+					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Réptil - Terra");
+				} else {
+					earthPlanet.backgrounManager.Next();
+				}
+
 				break;
 		}
 
-		earthPlanet.backgrounManager.Next();
+		countLife++;
 
-		if (countAnimals == 4) {
+		if (countLife == 15) {
 			FindObjectOfType<DialogueManager>().ShowCongratulations();
 		}
 	}
@@ -204,12 +234,10 @@ public class GameManager : MonoBehaviour
 					return;
 				} else {
 					Instantiate(starExplosion, newPosition, Quaternion.identity, universe);
-					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Cometa");
-					FindObjectOfType<DialogueManager>().ShowComet();
 				}
 				break;
 			case MatcherObject.type.STARDUST:
-				if (level < 5) {
+				if (level < 5 && countPlanets < 3) {
 					obj = Instantiate(stardustPrefabs[level], newPosition, Quaternion.identity, spawner);
 				} else if (countPlanets < 3) {
 					panel.SetActive(true);
@@ -217,18 +245,20 @@ public class GameManager : MonoBehaviour
 					FindObjectOfType<DialogueManager>().ShowOrbits();
 					orbits.SetActive(true);
 					countPlanets++;
+					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Explosão Planetária");
 
 					return;
 				} else {
 					Instantiate(cometaExplosion, newPosition, Quaternion.identity, universe);
-					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Explosão Planetária");
+					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Cometa");
+					FindObjectOfType<DialogueManager>().ShowComet();
 				}
 				break;
 			case MatcherObject.type.BIOLOGICAL:
 				if (level < 5) {
 					obj = Instantiate(biologicalPrefabs[level], newPosition, Quaternion.identity, earthPlanet.spawner);
 					obj.GetComponent<MatcherObject>().speed = 1f;
-				} 
+				}
 				break;
 		}
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6414868552014977926}
   - component: {fileID: 6414868552014977924}
   - component: {fileID: 6414868552014977925}
+  - component: {fileID: 4864120493932219075}
   m_Layer: 0
   m_Name: CometaExplosion
   m_TagString: Untagged
@@ -92,7 +93,7 @@ Animator:
   m_GameObject: {fileID: 6414868552014977921}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3dc6498a3354dd24fb6f0ec75a18dc26, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8782afd42e8cb4248adc765be045a842, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -111,5 +112,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2466a3678bbe015448b8bd337ed27111, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4864120493932219075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6414868552014977921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564241803c74a824987183a373b8fa1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -64,8 +64,7 @@ public class MatcherObject : MonoBehaviour
 		} else if (collision.tag == "Area") {
 			if (!Input.GetMouseButton(0) && isHolding) {
 				if (id == type.BIOLOGICAL && level == 4) {
-					FindObjectOfType<GameManager>().SpawnInArea(collision.GetComponent<Area>().id, collision.transform.position);
-					Destroy(collision.gameObject);
+					FindObjectOfType<GameManager>().SpawnInArea(collision.GetComponent<Area>().id, collision.transform.position, collision.gameObject);
 					Destroy(gameObject);
 				}
 			}
@@ -90,13 +89,14 @@ public class MatcherObject : MonoBehaviour
 					return;
 				} else if (id == type.BIOLOGICAL && level == 4) {
 					return;
-				} else if (id != type.BIOLOGICAL && FindObjectOfType<GameManager>().countPlanets == 3) {
+				} else if (id == type.ELEMENT && FindObjectOfType<GameManager>().countPlanets == 3) {
 					return;
+				} else if (id == type.STARDUST && FindObjectOfType<GameManager>().countPlanets == 3) {
+					FindObjectOfType<GameManager>().SpawnObject(id, level + 1, transform.position);
+				} else {
+					FindObjectOfType<GameManager>().SpawnObject(id, level + 1, transform.position);
+					Instantiate(combineExplosion, transform.position, Quaternion.identity);
 				}
-
-
-				FindObjectOfType<GameManager>().SpawnObject(id, level + 1, transform.position);
-				Instantiate(combineExplosion, transform.position, Quaternion.identity);
 
 				switch (id) {
 					case type.ELEMENT:
