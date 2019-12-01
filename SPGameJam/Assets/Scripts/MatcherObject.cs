@@ -52,7 +52,7 @@ public class MatcherObject : MonoBehaviour
 	}
 
 	private void OnTriggerStay2D(Collider2D collision) {
-		if (collision.tag == "Wall") {
+		if (collision.CompareTag("Wall")) {
 			if ((level > 0 || isEntering) && currentTime >= waitTime) {
 				float x = Random.Range(dir.x - 0.1f, dir.x + 0.1f);
 				float y = Random.Range(dir.y - 0.1f, dir.y - 0.1f);
@@ -61,7 +61,7 @@ public class MatcherObject : MonoBehaviour
 				dir = dir.normalized;
 				currentTime = 0f;
 			} 
-		} else if (collision.tag == "Area") {
+		} else if (collision.CompareTag( "Area")) {
 			if (!Input.GetMouseButton(0) && isHolding) {
 				if (id == type.BIOLOGICAL && level == 4) {
 					FindObjectOfType<GameManager>().SpawnInArea(collision.GetComponent<Area>().id, collision.transform.position, collision.gameObject);
@@ -72,7 +72,7 @@ public class MatcherObject : MonoBehaviour
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {
-		if (collision.tag == "Interact") {
+		if (collision.CompareTag("Interact")) {
 			MatcherObject other = collision.GetComponent<MatcherObject>();
 
 

@@ -477,8 +477,8 @@
 			<destination>{0ed6f1b7-04f6-48a0-8c3c-f9f96a678c2e}</destination>
 		</relationship>
 		<relationship name="automationPoints">
-			<destination>{693e62a2-21bf-4843-a889-45f5e011ac96}</destination>
 			<destination>{3acb5a48-9a58-4935-828f-9b6da2bb076f}</destination>
+			<destination>{693e62a2-21bf-4843-a889-45f5e011ac96}</destination>
 			<destination>{f8eea3a1-444b-421b-901f-cc5c3377b7eb}</destination>
 			<destination>{e1d847f4-9194-4a7b-943a-b03d39c08d09}</destination>
 		</relationship>
@@ -508,9 +508,9 @@
 			<destination>{0ed6f1b7-04f6-48a0-8c3c-f9f96a678c2e}</destination>
 		</relationship>
 		<relationship name="automationPoints">
-			<destination>{17bde0ec-d272-488f-8471-5a0e723bd92a}</destination>
 			<destination>{8b7d3f6d-e098-4fb2-82ed-585d9c4da326}</destination>
 			<destination>{95695670-7f61-478d-9532-99828c7e16c0}</destination>
+			<destination>{17bde0ec-d272-488f-8471-5a0e723bd92a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{7068bef9-523d-4259-8016-89de65b3b425}" />
@@ -561,8 +561,8 @@
 			<destination>{0ed6f1b7-04f6-48a0-8c3c-f9f96a678c2e}</destination>
 		</relationship>
 		<relationship name="automationPoints">
-			<destination>{fec57f8c-af7e-40e9-94ac-dd4706f09c35}</destination>
 			<destination>{870fe9f9-50a4-45df-a7c6-71d9189bf502}</destination>
+			<destination>{fec57f8c-af7e-40e9-94ac-dd4706f09c35}</destination>
 		</relationship>
 	</object>
 	<object class="SFXReverbEffect" id="{18e01e12-0b06-4d06-9199-7d5a6b35ca25}">
@@ -589,20 +589,20 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{756d0417-2da8-4bfb-8101-f21852d65ada}" />
-	<object class="AutomationPoint" id="{693e62a2-21bf-4843-a889-45f5e011ac96}">
-		<property name="position">
-			<value>2.9944382647385983</value>
-		</property>
-		<property name="value">
-			<value>-10</value>
-		</property>
-	</object>
 	<object class="AutomationPoint" id="{3acb5a48-9a58-4935-828f-9b6da2bb076f}">
 		<property name="position">
 			<value>0.013348164627363737</value>
 		</property>
 		<property name="value">
 			<value>-4</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{693e62a2-21bf-4843-a889-45f5e011ac96}">
+		<property name="position">
+			<value>2.9944382647385983</value>
+		</property>
+		<property name="value">
+			<value>-10</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{f8eea3a1-444b-421b-901f-cc5c3377b7eb}">
@@ -619,14 +619,6 @@
 		</property>
 		<property name="value">
 			<value>-8</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{17bde0ec-d272-488f-8471-5a0e723bd92a}">
-		<property name="position">
-			<value>3.9911012235817576</value>
-		</property>
-		<property name="value">
-			<value>-2</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{8b7d3f6d-e098-4fb2-82ed-585d9c4da326}">
@@ -646,6 +638,14 @@
 		</property>
 		<property name="value">
 			<value>0</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{17bde0ec-d272-488f-8471-5a0e723bd92a}">
+		<property name="position">
+			<value>3.9911012235817576</value>
+		</property>
+		<property name="value">
+			<value>-2</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{086b7474-fe41-41b9-9524-870401c9a368}">
@@ -702,6 +702,14 @@
 			<value>-1</value>
 		</property>
 	</object>
+	<object class="AutomationPoint" id="{870fe9f9-50a4-45df-a7c6-71d9189bf502}">
+		<property name="position">
+			<value>4</value>
+		</property>
+		<property name="value">
+			<value>-6</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{fec57f8c-af7e-40e9-94ac-dd4706f09c35}">
 		<property name="position">
 			<value>0.010011123470522803</value>
@@ -711,14 +719,6 @@
 		</property>
 		<property name="curveShape">
 			<value>1</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{870fe9f9-50a4-45df-a7c6-71d9189bf502}">
-		<property name="position">
-			<value>4</value>
-		</property>
-		<property name="value">
-			<value>-6</value>
 		</property>
 	</object>
 </objects>

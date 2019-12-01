@@ -33,7 +33,7 @@ public class Animal : MonoBehaviour
 	}
 
 	private void OnTriggerStay2D(Collider2D collision) {
-		if (collision.tag == "Wall") {
+		if (collision.CompareTag("Wall")) {
 			if (currentTime >= waitTime) {
 				float x = Random.Range(dir.x - 0.1f, dir.x + 0.1f);
 				float y = Random.Range(dir.y - 0.1f, dir.y - 0.1f);

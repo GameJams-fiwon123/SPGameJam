@@ -43,7 +43,7 @@ public class Planet : MonoBehaviour
 	}
 
 	private void OnTriggerStay2D(Collider2D collision) {
-		if (collision.tag == "Orbit") {
+		if (collision.CompareTag("Orbit")) {
 			if (!Input.GetMouseButton(0) && isHolding) {
 				StartOrbit();
 				RotateSpeed = collision.GetComponent<Orbit>().RotateSpeed;
@@ -54,7 +54,7 @@ public class Planet : MonoBehaviour
 				orbitIndex = collision.GetComponent<Orbit>().index;
 				FindObjectOfType<GameManager>().ActivatePlanet(orbitIndex, gameObject);
 			}
-		} else if (collision.tag == "Interact" && isOrbit && orbitIndex == 1) { //Earth Only
+		} else if (collision.CompareTag("Interact") && isOrbit && orbitIndex == 1) { //Earth Only
 			if (collision.GetComponent<MatcherObject>().id == MatcherObject.type.ELEMENT &&
 				collision.GetComponent<MatcherObject>().level == 0 && 
 				collision.GetComponent<MatcherObject>().isHolding) {

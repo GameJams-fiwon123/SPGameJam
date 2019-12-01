@@ -47,6 +47,10 @@ public class GameManager : MonoBehaviour
 
 	private bool showVisits;
 
+	private void Start() {
+		universe.gameObject.SetActive(true);
+	}
+
 	public void StartGame() {
 		StartAllAvaliableSpawn();
 		FindObjectOfType<DialogueManager>().ShowStar();
