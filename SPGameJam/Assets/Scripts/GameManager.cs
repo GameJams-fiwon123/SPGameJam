@@ -165,8 +165,10 @@ public class GameManager : MonoBehaviour
 			case Area.type.SKY:
 				countSky++;
 
-				if (countSky == 3)
+				if (countSky == 3) {
+					earthPlanet.musicEarth.SetParameter("Céu", 1);
 					Destroy(areaObject);
+				}
 
 				Instantiate(earthAreaPrefabs[0], newPosition, Quaternion.identity, earthPlanet.transform);
 				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Pássaro - Céu");
@@ -174,8 +176,10 @@ public class GameManager : MonoBehaviour
 			case Area.type.WATER:
 				countWater++;
 
-				if (countWater == 3)
+				if (countWater == 3) {
+					earthPlanet.musicEarth.SetParameter("Mar", 1);
 					Destroy(areaObject);
+				}
 
 				Instantiate(earthAreaPrefabs[1], newPosition, Quaternion.identity, earthPlanet.transform);
 				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Água - Peixe");
@@ -183,8 +187,10 @@ public class GameManager : MonoBehaviour
 			case Area.type.MOUNTAIN:
 				countMountain++;
 
-				if (countMountain == 3)
+				if (countMountain == 3) {
+					earthPlanet.musicEarth.SetParameter("Montanha", 1);
 					Destroy(areaObject);
+				}
 
 				Instantiate(earthAreaPrefabs[2], newPosition, Quaternion.identity, earthPlanet.transform);
 				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Roedor - Montanha");
@@ -192,9 +198,10 @@ public class GameManager : MonoBehaviour
 			case Area.type.TERRAIN:
 				countTerrain++;
 
-				if (countTerrain == 6)
+				if (countTerrain == 6) {
+					earthPlanet.musicEarth.SetParameter("Terra", 1);
 					Destroy(areaObject);
-				else if (earthPlanet.backgrounManager.indexSprite == 3) {
+				} else if (earthPlanet.backgrounManager.indexSprite == 3) {
 					Instantiate(earthAreaPrefabs[3], newPosition, Quaternion.identity, earthPlanet.transform);
 					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Réptil - Terra");
 				} else {

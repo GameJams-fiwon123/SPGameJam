@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FMODUnity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ public class EarthPlanet : MonoBehaviour
 	public Transform spawner;
 
 	public BackgroundManager backgrounManager;
+
+	public StudioEventEmitter musicEarth;
 
 	private int countObjects = 0;
 
