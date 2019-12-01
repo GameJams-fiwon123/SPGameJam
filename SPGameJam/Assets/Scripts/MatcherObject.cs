@@ -24,6 +24,8 @@ public class MatcherObject : MonoBehaviour
 
 	public bool isEntering;
 
+	public GameObject planet = null;
+
 	private void Update() {
 		if (dir != Vector3.zero) {
 			Move();
@@ -38,7 +40,12 @@ public class MatcherObject : MonoBehaviour
 	}
 
 	private void Move() {
-		transform.position += dir * speed * Time.deltaTime;
+		if (!planet) {
+			transform.position += dir * speed * Time.deltaTime;
+		} else {
+			dir = planet.transform.position - transform.position;
+			transform.position += dir * speed * Time.deltaTime;
+		}
 	}
 
 	private void HoldObject() {
@@ -80,6 +87,8 @@ public class MatcherObject : MonoBehaviour
 				FindObjectOfType<GameManager>().SpawnObject(type.BIOLOGICAL, level + 1, transform.position);
 				Instantiate(combineExplosion, transform.position, Quaternion.identity, transform.parent);
 				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Meleca (Mistura)");
+
+				FindObjectOfType<DialogueManager>().ShowLife();
 
 				Destroy(collision.gameObject);
 				Destroy(gameObject);
@@ -144,6 +153,7 @@ public class MatcherObject : MonoBehaviour
 
 	private void OnBecameVisible() {
 		gameObject.layer = 10;
+		planet = null;
 	}
 
 	public void StartEntering() {

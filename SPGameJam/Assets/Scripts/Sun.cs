@@ -9,4 +9,8 @@ public class Sun : MonoBehaviour
 	public void Show() {
 		anim.SetBool("IsShow", true);
 	}
+
+	private void OnBecameVisible() {
+		anim.SetBool("IsShow", true);
+	}
 }

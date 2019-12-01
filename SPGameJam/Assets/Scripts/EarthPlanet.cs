@@ -16,6 +16,13 @@ public class EarthPlanet : MonoBehaviour
 
 	private int countObjects = 0;
 
+
+	public int countSky = 0;
+	public int countWater = 0;
+	public int countMountain = 0;
+	public int countTerrain = 0;
+	public int countLife = 0;
+
 	private void Update() {
 		countObjects = spawner.transform.childCount;
 	}
@@ -46,7 +53,63 @@ public class EarthPlanet : MonoBehaviour
 		}
 	}
 
+	public void NextSky(GameObject areaObject) {
+		countSky++;
+
+		if (countSky == 3) {
+			musicEarth.SetParameter("Céu", 1);
+			Destroy(areaObject);
+		}
+	}
+
+	public void NextWater(GameObject areaObject) {
+		countWater++;
+
+		if (countWater == 3) {
+			musicEarth.SetParameter("Mar", 1);
+			Destroy(areaObject);
+		}
+	}
+
+	public void NextMountain(GameObject areaObject) {
+		countMountain++;
+
+		if (countMountain == 3) {
+			musicEarth.SetParameter("Montanha", 1);
+			Destroy(areaObject);
+		}
+	}
+
+	public void NextTerrain(GameObject areaObject) {
+		countTerrain++;
+
+		if (countTerrain == 6) {
+			musicEarth.SetParameter("Terra", 1);
+			Destroy(areaObject);
+		}
+	}
+
+	public void NextLife() {
+		countLife++;
+
+		if (countLife == 15) {
+			FindObjectOfType<DialogueManager>().ShowCongratulations();
+		}
+	}
+
 	private void OnEnable() {
+		if (countSky == 3) {
+			musicEarth.SetParameter("Céu", 1);
+		}
+		if (countWater == 3) {
+			musicEarth.SetParameter("Mar", 1);
+		}
+		if (countMountain == 3) {
+			musicEarth.SetParameter("Montanha", 1);
+		}
+		if (countTerrain == 3) {
+			musicEarth.SetParameter("Terra", 1);
+		}
 
 		StartSpawn();
 	}

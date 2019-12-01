@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.01.10.00">
-    <object class="ParameterPreset" id="{add97ba3-b79d-4d21-ac10-a179d7f42501}">
-        <property name="name">
-            <value>Terra</value>
-        </property>
-        <relationship name="folder">
-            <destination>{a4a54c38-8506-44e7-8f9a-fa48c59a3a7d}</destination>
-        </relationship>
-        <relationship name="parameter">
-            <destination>{beca609a-7793-4a86-9194-5b5e0cc1c83f}</destination>
-        </relationship>
-    </object>
-    <object class="GameParameter" id="{beca609a-7793-4a86-9194-5b5e0cc1c83f}">
-        <property name="initialValue">
-            <value>0</value>
-        </property>
-        <property name="seekSpeed">
-            <value>0.40000000596046448</value>
-        </property>
-    </object>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{add97ba3-b79d-4d21-ac10-a179d7f42501}">
+		<property name="name">
+			<value>Terra</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a4a54c38-8506-44e7-8f9a-fa48c59a3a7d}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{beca609a-7793-4a86-9194-5b5e0cc1c83f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{beca609a-7793-4a86-9194-5b5e0cc1c83f}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.40000000596046448</value>
+		</property>
+	</object>
 </objects>

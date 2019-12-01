@@ -20,6 +20,7 @@ public class WarpManager : MonoBehaviour
 		} else {
 			cam.orthographicSize = 0.1f;
 			cam.transform.position = new Vector3(0f, 0f, -10);
+			objDest.SetActive(true);
 			StartCoroutine(Warp(isEnter, 0.1f, pos, 5f, objDest, activePanel, deactivePanel, localObject ));
 		}
 
@@ -41,10 +42,11 @@ public class WarpManager : MonoBehaviour
 
 		if (isEnter) {
 			cam.transform.position = new Vector3(50f, 0f, -10);
+			objDest.SetActive(true);
 		} else {
 			cam.transform.position = new Vector3(0f, 0f, -10);
 		}
-		objDest.SetActive(true);
+
 		inWarp = false;
 
 		activePanel.SetActive(true);
@@ -54,7 +56,7 @@ public class WarpManager : MonoBehaviour
 			FindObjectOfType<GameManager>().StopAllSpawn();
 
 			if (objDest.GetComponent<EarthPlanet>() && !isEarthPlanet) {
-				StartCoroutine(StartEarthPlanet());
+				FindObjectOfType<DialogueManager>().ShowEarthPlanet();
 				isEarthPlanet = true;
 			} else if (objDest.GetComponent<ColdPlanet>() && !isColdPlanet) {
 				FindObjectOfType<DialogueManager>().ShowColdPlanet();
@@ -68,12 +70,5 @@ public class WarpManager : MonoBehaviour
 		} else {
 			FindObjectOfType<GameManager>().StartAllAvaliableSpawn();
 		}
-	}
-
-	IEnumerator StartEarthPlanet() {
-		FindObjectOfType<DialogueManager>().ShowEarthPlanet();
-		yield return new WaitForSeconds(6);
-		FindObjectOfType<DialogueManager>().ShowLife();
-
 	}
 }

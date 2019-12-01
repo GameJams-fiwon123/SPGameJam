@@ -5,12 +5,14 @@ using UnityEngine;
 public class Animal : MonoBehaviour
 {
 	public Vector3 dir = Vector3.zero;
-	public float speed = 1f;
+	public float speed = 0.5f;
 
 	private float currentTime = 0f;
 	private float waitTime = 0.1f;
 
 	public bool isEntering = true;
+
+	public Vector3 centerPosition;
 
 	private void Start() {
 		ChangeDirection();
@@ -41,6 +43,9 @@ public class Animal : MonoBehaviour
 				dir = -dir;
 				dir = dir.normalized;
 				currentTime = 0f;
+			} else {
+				dir = centerPosition - transform.position;
+				dir = dir.normalized;
 			}
 		}
 	}
