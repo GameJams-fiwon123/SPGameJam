@@ -46,6 +46,7 @@ public class DialogueManager : MonoBehaviour
 	}
 
 	public void ShowElementsPlanets() {
+		Debug.Log("Entrou");
 		dialogueElements.Play("Show");
 	}
 

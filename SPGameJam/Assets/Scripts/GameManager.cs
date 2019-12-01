@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 	private int countObjects = 0;
 
 	public int countPlanets = 0;
+	public int countInOrbit = 0;
 
 	private int countSky = 0;
 	private int countWater = 0;
@@ -150,7 +151,9 @@ public class GameManager : MonoBehaviour
 		musicUniverse.SetParameter("Níveis", 1 + countPlanets);
 		backgrounManager.Next();
 
-		if (countPlanets == 3) {
+		countInOrbit++;
+
+		if (countInOrbit == 3) {
 			StartAllAvaliableSpawn();
 			FindObjectOfType<DialogueManager>().ShowElementsPlanets();
 
