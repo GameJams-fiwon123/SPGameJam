@@ -62,7 +62,7 @@ public class Planet : MonoBehaviour
 				collision.GetComponent<MatcherObject>().speed = 0f;
 				collision.GetComponent<MatcherObject>().isHolding = false;
 				collision.GetComponent<MatcherObject>().orbitIndex = orbitIndex;
-
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Queda");
 				collision.gameObject.GetComponent<Animator>().SetBool("IsEntering", true);
 			}
 		}

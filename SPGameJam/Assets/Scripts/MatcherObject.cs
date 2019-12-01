@@ -90,7 +90,10 @@ public class MatcherObject : MonoBehaviour
 					return;
 				} else if (id == type.BIOLOGICAL && level == 4) {
 					return;
+				} else if (id != type.BIOLOGICAL && FindObjectOfType<GameManager>().countPlanets == 3) {
+					return;
 				}
+
 
 				FindObjectOfType<GameManager>().SpawnObject(id, level + 1, transform.position);
 				Instantiate(combineExplosion, transform.position, Quaternion.identity);

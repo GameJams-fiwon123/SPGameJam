@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
 	public Animator dialoguePlanets;
 	public Animator dialogueHotPlanet;
 	public Animator dialogueLife;
+	public Animator dialogueContratulations;
 
 
 	public void ShowStar() {
@@ -54,5 +55,10 @@ public class DialogueManager : MonoBehaviour
 
 	public void ShowLife() {
 		dialogueLife.Play("Show");
+	}
+
+	public void ShowCongratulations() {
+		dialogueContratulations.Play("Show");
+		FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Parabéns!");
 	}
 }

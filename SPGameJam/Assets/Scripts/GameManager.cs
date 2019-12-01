@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
 	private int countObjects = 0;
 
-	private int countPlanets = 0;
+	public int countPlanets = 0;
 	private int countAnimals = 0;
 	private bool flagSun = false;
 
@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
 
 				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Elemento Entra");
 				GameObject obj = Instantiate(elementsPrefabs[0], newPosition, Quaternion.identity, spawner);
-
+				obj.name = "Element1";
 
 					if (newPosition.x < 0f) {
 						obj.GetComponent<MatcherObject>().dir = Vector3.right;
@@ -130,31 +130,24 @@ public class GameManager : MonoBehaviour
 		StopAllCoroutines();
 	} 
 
-	IEnumerator ShowDialoguePlanet(int index, GameObject obj) {
+
+	public void ActivatePlanet(int index, GameObject obj) {
+
 		panel.transform.GetChild(index).gameObject.SetActive(true);
 		panel.transform.GetChild(index).GetComponent<WarpIcon>().objWarp = obj;
 
 		if (!showVisits) {
 			showVisits = true;
 			FindObjectOfType<DialogueManager>().ShowVisits();
-			yield return new WaitForSeconds(5);
 		}
 
-		switch (index) {
-			case 0:
-				FindObjectOfType<DialogueManager>().ShowHotPlanet();
-				break;
-			case 1:
-				FindObjectOfType<DialogueManager>().ShowEarthPlanet();
-				break;
-			case 2:
-				FindObjectOfType<DialogueManager>().ShowColdPlanet();
-				break;
-		}
-	}
+		musicUniverse.SetParameter("Níveis", 1 + countPlanets);
+		backgrounManager.Next();
 
-	public void ActivatePlanet(int index, GameObject obj) {
-		StartCoroutine(ShowDialoguePlanet(index, obj));
+		if (countPlanets == 3) {
+			StartAllAvaliableSpawn();
+			FindObjectOfType<DialogueManager>().ShowElementsPlanets();
+		}
 	}
 
 	public void SpawnInArea(Area.type type, Vector3 newPosition) {
@@ -162,22 +155,30 @@ public class GameManager : MonoBehaviour
 			case Area.type.SKY:
 				countAnimals++;
 				Instantiate(earthAreaPrefabs[0], newPosition, Quaternion.identity, earthPlanet.transform);
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Pássaro - Céu");
 				break;
 			case Area.type.WATER:
 				countAnimals++;
 				Instantiate(earthAreaPrefabs[1], newPosition, Quaternion.identity, earthPlanet.transform);
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Água - Peixe");
 				break;
 			case Area.type.MOUNTAIN:
 				countAnimals++;
 				Instantiate(earthAreaPrefabs[2], newPosition, Quaternion.identity, earthPlanet.transform);
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Roedor - Montanha");
 				break;
 			case Area.type.TERRAIN:
 				countAnimals++;
 				Instantiate(earthAreaPrefabs[3], newPosition, Quaternion.identity, earthPlanet.transform);
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Réptil - Terra");
 				break;
 		}
 
 		earthPlanet.backgrounManager.Next();
+
+		if (countAnimals == 4) {
+			FindObjectOfType<DialogueManager>().ShowCongratulations();
+		}
 	}
 
 	public void SpawnObject(MatcherObject.type type, int level, Vector3 newPosition) {
@@ -216,14 +217,7 @@ public class GameManager : MonoBehaviour
 					FindObjectOfType<DialogueManager>().ShowOrbits();
 					orbits.SetActive(true);
 					countPlanets++;
-					musicUniverse.SetParameter("Níveis", 1+ countPlanets);
 
-					if (countPlanets == 3) {
-						StartAllAvaliableSpawn();
-						FindObjectOfType<DialogueManager>().ShowElementsPlanets();
-					}
-
-					backgrounManager.Next();
 					return;
 				} else {
 					Instantiate(cometaExplosion, newPosition, Quaternion.identity, universe);

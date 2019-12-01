@@ -8,8 +8,10 @@ public class WarpManager : MonoBehaviour
 	public bool inWarp = false;
 
 	private bool isEarthPlanet;
+	private bool isHotPlanet;
+	private bool isColdPlanet;
 
-   public void StartWarp(bool isEnter, Vector3 pos, GameObject objDest, GameObject activePanel, GameObject deactivePanel, GameObject localObject) {
+	public void StartWarp(bool isEnter, Vector3 pos, GameObject objDest, GameObject activePanel, GameObject deactivePanel, GameObject localObject) {
 		StopAllCoroutines();
 		inWarp = true;
 		deactivePanel.SetActive(false);
@@ -52,11 +54,26 @@ public class WarpManager : MonoBehaviour
 			FindObjectOfType<GameManager>().StopAllSpawn();
 
 			if (objDest.GetComponent<EarthPlanet>() && !isEarthPlanet) {
-				FindObjectOfType<DialogueManager>().ShowLife();
+				StartCoroutine(StartEarthPlanet());
+				isEarthPlanet = true;
+			} else if (objDest.GetComponent<ColdPlanet>() && !isColdPlanet) {
+				FindObjectOfType<DialogueManager>().ShowColdPlanet();
+				isColdPlanet = true;
+			} else if (objDest.GetComponent<HotPlanet>() && !isHotPlanet) {
+				FindObjectOfType<DialogueManager>().ShowHotPlanet();
+				isHotPlanet = true;
 			}
+
 
 		} else {
 			FindObjectOfType<GameManager>().StartAllAvaliableSpawn();
 		}
+	}
+
+	IEnumerator StartEarthPlanet() {
+		FindObjectOfType<DialogueManager>().ShowEarthPlanet();
+		yield return new WaitForSeconds(6);
+		FindObjectOfType<DialogueManager>().ShowLife();
+
 	}
 }
