@@ -17,12 +17,6 @@ public class GameManager : MonoBehaviour
 	public int countPlanets = 0;
 	public int countInOrbit = 0;
 
-	//private int countSky = 0;
-	//private int countWater = 0;
-	//private int countMountain = 0;
-	//private int countTerrain = 0;
-	//private int countLife = 0;
-
 	private bool flagSun = false;
 
 	public GameObject starExplosion;
@@ -36,20 +30,16 @@ public class GameManager : MonoBehaviour
 
 	public GameObject orbits;
 
-	//public Transform universe;
-
 	public BackgroundManager backgrounManager;
 
 	public EarthPlanet earthPlanet;
 
 	public Universe universe;
 
+	private bool isLoaded;
+
 
 	private bool showVisits;
-
-	private void Start() {
-		universe.gameObject.SetActive(true);
-	}
 
 	public void StartGame() {
 		StartAllAvaliableSpawn();
@@ -57,6 +47,11 @@ public class GameManager : MonoBehaviour
 	}
 
 	private void Update() {
+		if (FMODUnity.RuntimeManager.HasBanksLoaded && !isLoaded) {
+			universe.gameObject.SetActive(true);
+			isLoaded = true;
+		}
+
 		countObjects = spawner.transform.childCount;
 	}
 
@@ -84,11 +79,7 @@ public class GameManager : MonoBehaviour
 	IEnumerator StartSpawnElement() {
 		while (true) {
 
-			if (countObjects <= 20) {
-
 				Vector3 newPosition = GetPositionSpawn();
-
-
 
 				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Elemento Entra");
 				GameObject obj = Instantiate(elementsPrefabs[0], newPosition, Quaternion.identity, spawner);
@@ -99,7 +90,6 @@ public class GameManager : MonoBehaviour
 				} else {
 					obj.GetComponent<MatcherObject>().dir = Vector3.left;
 				}
-			}
 
 			yield return new WaitForSeconds(2);
 		}
@@ -107,8 +97,6 @@ public class GameManager : MonoBehaviour
 
 	IEnumerator StartSpawnStardust() {
 		while (true) {
-			if (countObjects <= 20) {
-
 				Vector3 newPosition = GetPositionSpawn();
 
 				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Poeira Entra");
@@ -119,7 +107,6 @@ public class GameManager : MonoBehaviour
 				} else {
 					obj.GetComponent<MatcherObject>().dir = Vector3.left;
 				}
-			}
 
 			yield return new WaitForSeconds(2);
 		}

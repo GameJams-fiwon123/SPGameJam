@@ -20,7 +20,7 @@ MonoBehaviour:
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 0
   BankLoadType: 0
-  AutomaticSampleLoading: 0
+  AutomaticSampleLoading: 1
   EncryptionKey: 
   ImportType: 0
   TargetAssetPath: 
@@ -43,7 +43,7 @@ MonoBehaviour:
   - Platform: 1
     Value: 0
   - Platform: 2
-    Value: 1
+    Value: 2
   - Platform: 20
     Value: 0
   OverlaySettings:

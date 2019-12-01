@@ -37,16 +37,14 @@ public class EarthPlanet : MonoBehaviour
 
 	IEnumerator StartSpawnLightning() {
 		while (true) {
-			if (countObjects <= 20) {
-				if (spawner.Find("Element1")) {
-					int index = Random.Range(0, sky.childCount);
-					Vector3 newPosition = sky.transform.GetChild(index).position;
+			if (spawner.Find("Element1")) {
+				int index = Random.Range(0, sky.childCount);
+				Vector3 newPosition = sky.transform.GetChild(index).position;
 
-					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Raio");
-					GameObject obj = Instantiate(lightningPrefab, newPosition, Quaternion.identity, spawner);
-					obj.GetComponent<MatcherObject>().dir = Vector3.down;
-					//obj.GetComponent<MatcherObject>().speed = 0.05f;
-				}
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Raio");
+				GameObject obj = Instantiate(lightningPrefab, newPosition, Quaternion.identity, spawner);
+				obj.GetComponent<MatcherObject>().dir = Vector3.down;
+				//obj.GetComponent<MatcherObject>().speed = 0.05f;
 			}
 
 			yield return new WaitForSeconds(2);
